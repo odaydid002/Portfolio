@@ -8,13 +8,13 @@ I enjoy turning ideas into real applications and continuously improving my skill
 
 ---
 
-📌 About This Repository
+## 📌 About This Repository
 This repository showcases a collection of my work, highlighting both my technical skills and my approach to designing and building systems.  
 Each project represents a step in my growth as a developer.
 
 ---
 
-🛠️ Skills & Technologies
+## 🛠️ Skills & Technologies
 - **Programming:** JavaScript, Python, C  
 - **Web Development:** HTML, CSS, modern UI techniques  
 - **System Design:** UML, SysML, PlantUML  
@@ -23,20 +23,21 @@ Each project represents a step in my growth as a developer.
 
 ---
 
-📂 Projects Included
+## 📂 Projects Included
 
-🌐 Web Projects
+## 🌐 Web Projects
 User-focused applications with clean, responsive designs and interactive features.
 
-🔌 Embedded Systems
+##🔌 Embedded Systems
 Projects that combine hardware and software, including communication modules and sensor-based systems.
 
-🧠 System Design
+## 🧠 System Design
 Professional UML and SysML diagrams demonstrating structured and scalable system thinking.
 
 ---
 
-🎯 My Approach
+## 🎯 My Approach
+
 I focus on:
 - Writing clean, maintainable code  
 - Designing systems before implementation  
@@ -45,7 +46,7 @@ I focus on:
 
 ---
 
-🚀 Getting Started
+## 🚀 Getting Started
 
 To explore this portfolio locally:
 
@@ -58,6 +59,7 @@ Add more advanced and real-world projects
 Improve UI/UX design quality
 Deploy live demos
 Explore AI integration in future projects
+
 🤝 Let’s Connect
 
 I’m always open to new opportunities, collaborations, and interesting discussions.

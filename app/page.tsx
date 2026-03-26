@@ -1,65 +1,53 @@
 import Image from "next/image";
+import { oday } from "@/constants/images"
+import { facebook, instagram, linkedin, telegram } from "@/constants/logo";
+
+export const dynamic = 'force-dynamic'
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      <div 
+        className="flex my-2 rounded-2xl flex-col items-center overflow-hidden relative"
+        style={{backgroundColor: '#5476CC', width: 'calc(100% - 1em)', height: 'calc(100vh - 1em)'}}
+      >
+        <Image src={oday} alt="Oudai" width={650} className="absolute bottom-0"/>
+        <div className="absolute flex flex-col justify-around w-[300px] right-0 top-0 h-full ml-8">
+          <div>
+            <h2 className="font-black">FOLLOW ME</h2>
+            <ul className="flex flex-row gap-4">
+              <li className="mt-2 rounded-full p-1 border-2 flex items-center justify-center">
+                 <Image src={facebook} alt="f" width={15} height={15} /> 
+              </li>
+              <li className="mt-2 rounded-full p-1 border-2 flex items-center justify-center">
+                 <Image src={instagram} alt="instagram" width={15} height={15} /> 
+              </li>
+              <li className="mt-2 rounded-full p-1 border-2 flex items-center justify-center">
+                 <Image src={telegram} alt="telegram" width={15} height={15} /> 
+              </li>
+              <li className="mt-2 rounded-full p-1 border-2 flex items-center justify-center">
+                 <Image src={linkedin} alt="in" width={15} height={15} /> 
+              </li>
+            </ul>
+            <p className="font-stretch-75% pt-2">I develop production-ready full-stack applications, including web platforms and mobile apps for both Android and iOS.</p>
+          </div>
+          <h1 className="flex flex-col text-6xl font-black gap-2">
+            <span>FULL</span>
+            <span>STACK</span>
+            <span>CODER</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="absolute flex flex-col justify-around w-[300px] left-0 top-0 h-full ml-8">
+          <h1 className="flex flex-col text-6xl font-black gap-2">
+            <span>UI UX</span>
+            <span>DESIGNER</span>
+          </h1>
+          <div>
+            <h2 className="text-xl font-bold">HI, I AM OUDAI</h2>
+            <p className="font-stretch-75%">I design intuitive interfaces and develop user-centric solutions, blending creativity and technical expertise to craft seamless digital experiences</p>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </>
   );
 }

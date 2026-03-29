@@ -1,0 +1,29 @@
+import React from 'react'
+
+const Shape4 = ({ className }: { className?: string }) => {
+  return (
+    <svg 
+      viewBox="0 0 51 60" 
+      width="60"
+      height="60"
+      fill="none" 
+      className={className}
+    >
+      <circle
+        cx="20"
+        cy="20"
+        r="18.5"
+        stroke="currentColor"
+        strokeWidth="3"
+      />
+      <circle
+        cx="31"
+        cy="40"
+        r="19.5"
+        stroke="currentColor"
+      />
+    </svg>
+  )
+}
+
+export default Shape4

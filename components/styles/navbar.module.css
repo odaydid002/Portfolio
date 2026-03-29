@@ -1,0 +1,16 @@
+.navList li{
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+}
+
+.navList li:hover{
+    opacity: 0.5;
+    color: #5454D4;
+    transform: scale(0.99);
+}
+
+.navSelected{
+    opacity: 0.5;
+    color: #5454D4;
+    transform: scale(1.05);
+}

@@ -1,3 +1,3 @@
-import oday from "@/assets/oday.png";
+import oday from "@/assets/rect1.svg";
 
 export { oday };

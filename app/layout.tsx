@@ -25,7 +25,21 @@ export default function RootLayout({
       className={`${poppins.className} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col relative items-center">
+      <body className="min-h-full flex flex-col relative items-center overflow-x-hidden">
+        <div 
+          className="rounded-full w-100 h-250 z-0 opacity-20 absolute left-50 bg-primary" 
+          style={{
+            filter:"blur(150px)",
+            transform: "rotateZ(-50deg)"
+          }}
+        ></div>
+        <div 
+          className="bg-secondary rounded-full w-100 h-250 z-0 opacity-20 absolute right-50 top-50" 
+          style={{
+            filter:"blur(150px)",
+            transform: "rotateZ(50deg)"
+          }}
+        ></div>
         <Navbar />
         {children}
       </body>

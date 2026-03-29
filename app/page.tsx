@@ -34,7 +34,10 @@ export default function Home() {
         </div>
         <div className="flex-1 h-dvh relative min-w-150 max-w-3/6">
           <Shape2 className="absolute top-55 right-35"/>
-          <Image src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
+          <Rect className="absolute top-65 right-30"/>
+          {/*
+            <Image src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
+          */}
           <Shape3 className="absolute top-40 left-35"/>
           <Shape4 className="absolute top-35 right-20"/>
           <Shape1 className="absolute bottom-15 left-20"/>

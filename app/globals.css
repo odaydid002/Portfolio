@@ -43,3 +43,41 @@ body {
 .anime-fade{
   animation: fade 20s infinite;
 }
+
+.hidden4phone{
+  display: flex;
+}
+.hidden4pc{
+  display: none;
+}
+
+/* Small phones */
+@media (max-width: 480px) { 
+    .hidden4phone{
+      display: none;
+    }
+    .hidden4pc{
+      display: flex;
+    }
+}
+    
+
+/* Most phones (standard) */
+@media (max-width: 640px) { 
+    .hidden4phone{
+      display: none;
+    }
+    .hidden4pc{
+      display: flex;
+    }
+}
+
+/* Large phones / small tablets */
+@media (max-width: 768px) { 
+    .hidden4phone{
+      display: none;
+    }
+    .hidden4pc{
+      display: flex;
+    }
+}

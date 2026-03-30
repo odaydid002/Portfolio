@@ -20,6 +20,13 @@ gsap.registerPlugin(ScrollTrigger);
 export const dynamic = 'force-dynamic'
 
 export default function Home() {
+  const [width, setWidth] = useState<number | null>(null);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const sec1 = useRef(null);
   const sec2 = useRef(null);
@@ -59,7 +66,7 @@ export default function Home() {
     const p1 = para1.current;
 
     const ctx = gsap.context(() => {
-      gsap.set([sh3, sh4, sh5, sh6], {y: 120, opacity: 0})
+      gsap.set([sh3, sh4, sh5, sh6], {y: -120, opacity: 0})
       gsap.from([sh3, sh4, sh5, sh6], {
         y: 0,
         opacity: 1,
@@ -71,7 +78,7 @@ export default function Home() {
           trigger: s1,
         },
       }),
-      gsap.set([sh1, sh2], {y: 100})
+      gsap.set([sh1, sh2], {y: -100})
       gsap.from([sh1, sh2], {
         y: 0,
         duration: 1,
@@ -111,31 +118,31 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-row items-center justify-center w-full flex-wrap z-50" ref={sec1}>
-        <div className="flex-1 h-dvh pt-45 pl-8 max-w-3/6">
-          <h1 className="text-white font-extrabold text-6xl flex flex-col gap-2">
+      <div className="flex flex-row items-center justify-center w-full flex-wrap z-50 overflow-hidden " ref={sec1}>
+        <div className="flex-1 flex flex-col h-dvh pt-35 lg:pt-45 pl-8 lg:max-w-3/6 ">
+          <h1 className="text-white font-extrabold text-4xl lg:text-6xl flex flex-col gap-2">
             <span ref={title1}>FULL</span>
             <span ref={title2}>STACK</span>
             <span ref={title3}>CODER</span>
           </h1>
-          <p className="mt-10 max-w-4/6" ref={para1}>A Full-Stack Software Engineer and UI/UX Designer, creating modern, user-friendly web and mobile applications that are both functional and visually appealing. I turn ideas into seamless digital experiences from concept to deployment.</p>
-          <button ref={button1} className=" mt-10 bg-primary hover:opacity-80 cursor-pointer text-white text-sm rounded-lg px-6 py-1.5 font-semibold">
+          <p className="mt-10 pr-4 pt-4 lg:max-w-4/6 lg:pt-0 text-md" ref={para1}>A Full-Stack Software Engineer and UI/UX Designer, creating modern, user-friendly web and mobile applications that are both functional and visually appealing. I turn ideas into seamless digital experiences from concept to deployment.</p>
+          <button ref={button1} className="mt-10 bg-primary hover:opacity-80 cursor-pointer text-white text-sm rounded-lg px-8 py-2 font-semibold max-w-fit">
             My Work
             <span className="font-bold pl-2">
               &#8599;
             </span>
           </button>
         </div>
-        <div className="flex-1 h-dvh relative min-w-150 max-w-3/6">
-          <Shape2 ref={shape1} className="absolute top-55 right-35"/>
-          <Rect ref={shape2} className="absolute top-65 right-30"/>
+        <div className="flex-1 h-dvh relative min-w-150 max-w-3/6 overflow-hidden">
+          <Shape2 ref={shape1} className="absolute top-50 right-50 lg:top-55 lg:right-35 w-50 lg:w-90 h-auto"/>
+          <Rect ref={shape2} className="absolute top-55 right-50 lg:top-65 lg:right-30 w-50 lg:w-90 h-auto"/>
           {/*
             <Image ref={shape2} src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
           */}
-          <Shape3 ref={shape3} className="absolute top-40 left-35"/>
-          <Shape4 ref={shape4} className="absolute top-35 right-20"/>
-          <Shape1 ref={shape5} className="absolute bottom-15 left-20"/>
-          <Shape5 ref={shape6} className="absolute bottom-10 right-20"/>
+          <Shape3 ref={shape3} className="absolute top-25 lg:top-40 left-35 w-15 lg:w-20 h-auto"/>
+          <Shape4 ref={shape4} className="absolute top-30 right-35 lg:top-35 lg:right-20 w-15 lg:w-20 h-auto"/>
+          <Shape1 ref={shape5} className="absolute bottom-40 left-35 lg:bottom-15 lg:left-20 w-15 lg:w-20 h-auto"/>
+          <Shape5 ref={shape6} className="absolute bottom-35 right-35 lg:bottom-10 lg:right-20 w-10 lg:w-20 h-auto"/>
         </div>
       </div>
       <div className="flex flex-col w-full h-dvh" ref={sec2}>

@@ -25,7 +25,7 @@ export default function RootLayout({
       className={`${poppins.className} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col relative items-center overflow-x-hidden px-8">
+      <body className="min-h-full flex flex-col relative items-center overflow-x-hidden px-4 lg:px-8">
         <div 
           className="rounded-full w-100 h-250 z-0 opacity-20 fixed left-50 bg-primary anime-fade" 
           style={{

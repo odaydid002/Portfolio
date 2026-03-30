@@ -5,8 +5,6 @@ const Rect = forwardRef<SVGSVGElement, { className?: string }>(
     return(
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="350"
-      height="350"
       viewBox="0 0 495 495"
       fill="none"
       className={className}

@@ -3,11 +3,13 @@ import facebook from "@/assets/facebook.svg";
 import instagram from "@/assets/instagram.svg";
 import telegram from "@/assets/telegram.svg";
 import linkedin from "@/assets/linkedin.svg";
+import menu from "@/assets/menu.svg";
 
 export { 
     Tie,
     facebook,
     instagram,
     telegram,
-    linkedin
+    linkedin,
+    menu
 };

@@ -14,3 +14,7 @@
     color: #5454D4;
     transform: scale(1.05);
 }
+
+.menu{
+    display: none;
+}

@@ -1,7 +1,8 @@
-import React from 'react'
+import { forwardRef } from "react";
 
-const Rect = ({ className }: { className?: string }) => {
-  return (
+const Rect = forwardRef<SVGSVGElement, { className?: string }>(
+  ({ className }, ref) => {
+    return(
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="350"
@@ -9,6 +10,7 @@ const Rect = ({ className }: { className?: string }) => {
       viewBox="0 0 495 495"
       fill="none"
       className={className}
+      ref={ref}
     >
       <rect
         x="149.97"
@@ -59,6 +61,6 @@ const Rect = ({ className }: { className?: string }) => {
       </g>
     </svg>
   )
-}
+})
 
-export default Rect
+export default Rect;

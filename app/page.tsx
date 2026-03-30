@@ -1,7 +1,7 @@
 "use client";
 
 import { facebook, instagram, linkedin, telegram } from "@/constants/logo";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from './styles/navbar.module.css'
@@ -21,28 +21,125 @@ export const dynamic = 'force-dynamic'
 
 export default function Home() {
 
+  const sec1 = useRef(null);
+  const sec2 = useRef(null);
+
+  const title1 = useRef(null);
+  const title2 = useRef(null);
+  const title3 = useRef(null);
+
+  const shape1 = useRef(null);
+  const shape2 = useRef(null);
+  const shape3 = useRef(null);
+  const shape4 = useRef(null);
+  const shape5 = useRef(null);
+  const shape6 = useRef(null);
+
+  const button1 = useRef(null);
+  
+  const para1 = useRef(null);
+
+  useEffect(() => {
+    const s1 = sec1.current;
+    const s2 = sec2.current;
+
+    const t1 = title1.current;
+    const t2 = title2.current;
+    const t3 = title3.current;
+
+    const sh1 = shape1.current;
+    const sh2 = shape2.current;
+    const sh3 = shape3.current;
+    const sh4 = shape4.current;
+    const sh5 = shape5.current;
+    const sh6 = shape6.current;
+
+    const bt1 = button1.current;
+    
+    const p1 = para1.current;
+
+    const ctx = gsap.context(() => {
+      gsap.set([sh3, sh4, sh5, sh6], {y: 120, opacity: 0})
+      gsap.from([sh3, sh4, sh5, sh6], {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 3,
+          trigger: s1,
+        },
+      }),
+      gsap.set([sh1, sh2], {y: 100})
+      gsap.from([sh1, sh2], {
+        y: 0,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 3,
+          trigger: s1,
+        },
+      }),
+      gsap.set([t1, t2, t3], {y: -200})
+      gsap.from([t1, t2, t3], {
+        y: 0,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 2,
+          trigger: s1,
+        },
+      }),
+      gsap.set([p1, bt1], {y: 100, opacity: 0})
+      gsap.from([p1, bt1], {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.1,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 1,
+          trigger: s1,
+        },
+      })
+    });
+    return () => ctx.revert();
+  }, [])
+
   return (
     <>
-      <div className="flex flex-row items-center justify-center w-full flex-wrap">
+      <div className="flex flex-row items-center justify-center w-full flex-wrap z-50" ref={sec1}>
         <div className="flex-1 h-dvh pt-45 pl-8 max-w-3/6">
           <h1 className="text-white font-extrabold text-6xl flex flex-col gap-2">
-            <span>FULL</span>
-            <span>STACK</span>
-            <span>CODER</span>
+            <span ref={title1}>FULL</span>
+            <span ref={title2}>STACK</span>
+            <span ref={title3}>CODER</span>
           </h1>
-          <p className="mt-20 max-w-4/6">A Full-Stack Software Engineer and UI/UX Designer, creating modern, user-friendly web and mobile applications that are both functional and visually appealing. I turn ideas into seamless digital experiences from concept to deployment.</p>
+          <p className="mt-10 max-w-4/6" ref={para1}>A Full-Stack Software Engineer and UI/UX Designer, creating modern, user-friendly web and mobile applications that are both functional and visually appealing. I turn ideas into seamless digital experiences from concept to deployment.</p>
+          <button ref={button1} className=" mt-10 bg-primary hover:opacity-80 cursor-pointer text-white text-sm rounded-lg px-6 py-1.5 font-semibold">
+            My Work
+            <span className="font-bold pl-2">
+              &#8599;
+            </span>
+          </button>
         </div>
         <div className="flex-1 h-dvh relative min-w-150 max-w-3/6">
-          <Shape2 className="absolute top-55 right-35"/>
-          <Rect className="absolute top-65 right-30"/>
+          <Shape2 ref={shape1} className="absolute top-55 right-35"/>
+          <Rect ref={shape2} className="absolute top-65 right-30"/>
           {/*
-            <Image src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
+            <Image ref={shape2} src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
           */}
-          <Shape3 className="absolute top-40 left-35"/>
-          <Shape4 className="absolute top-35 right-20"/>
-          <Shape1 className="absolute bottom-15 left-20"/>
-          <Shape5 className="absolute bottom-10 right-20"/>
+          <Shape3 ref={shape3} className="absolute top-40 left-35"/>
+          <Shape4 ref={shape4} className="absolute top-35 right-20"/>
+          <Shape1 ref={shape5} className="absolute bottom-15 left-20"/>
+          <Shape5 ref={shape6} className="absolute bottom-10 right-20"/>
         </div>
+      </div>
+      <div className="flex flex-col w-full h-dvh" ref={sec2}>
+        
       </div>
     </>
   );

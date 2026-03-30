@@ -1,13 +1,15 @@
-import React from 'react'
+import { forwardRef } from "react";
 
-const Shape2 = ({ className }: { className?: string }) => {
-  return (
+const Shape2 = forwardRef<SVGSVGElement, { className?: string }>(
+  ({ className }, ref) => {
+    return(
     <svg
       width="350"
       height="350"
       viewBox="0 0 495 495"
       fill="none"
       className={className}
+      ref={ref}
     >
       <rect
         x="149.97"
@@ -22,5 +24,5 @@ const Shape2 = ({ className }: { className?: string }) => {
     </svg>
   )
 }
-
+)
 export default Shape2

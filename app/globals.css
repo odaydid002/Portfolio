@@ -82,3 +82,14 @@ body {
       display: flex;
     }
 }
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: rgba(128, 128, 128, 0.089);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #5454D4;
+    border-radius: 5px;
+}

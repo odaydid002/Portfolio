@@ -28,7 +28,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       autoPlay={autoPlay}
       loop={loop}
       controls={controls}
-      className="lg:max-h-[70%]"
+      className="lg:max-h-[500px]"
     />
   );
 };

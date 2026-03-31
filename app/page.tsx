@@ -175,7 +175,7 @@ export default function Home() {
             <span ref={title2}>STACK</span>
             <span ref={title3}>CODER</span>
           </h1>
-          <p className="mt-10 pr-4 pt-4 lg:max-w-4/6 lg:pt-0 text-md" ref={para1}>A Full-Stack Software Engineer and UI/UX Designer, creating modern, user-friendly web and mobile applications that are both functional and visually appealing. I turn ideas into seamless digital experiences from concept to deployment.</p>
+          <p className="mt-10 pr-4 pt-4 lg:max-w-4/6 lg:pt-0 text-md opacity-70" ref={para1}>A Full-Stack Software Engineer and UI/UX Designer, creating modern, user-friendly web and mobile applications that are both functional and visually appealing. I turn ideas into seamless digital experiences from concept to deployment.</p>
           <button ref={button1} className="mt-10 bg-primary hover:opacity-80 cursor-pointer text-white text-sm rounded-lg px-8 py-2 font-semibold max-w-fit">
             My Work
             <span className="font-bold pl-2">
@@ -195,7 +195,7 @@ export default function Home() {
           <Shape5 ref={shape6} className="absolute bottom-35 right-35 lg:bottom-10 lg:right-20 w-10 lg:w-15 h-auto"/>
         </div>
       </div>
-      <div className="flex flex-col w-full h-dvh overflow-hidden lg:pt-8 pt-16" ref={sec2}>
+      <div className="flex flex-col w-full overflow-hidden lg:pt-8 pt-16 pb-8" ref={sec2}>
         <div className="flex flex-row px-4 lg:px-0 lg:w-3/4 self-center flex-wrap">
               <h1 className="min-w-[50%] font-extrabold text-4xl flex flex-col">
                 <span ref={title4}>Why I Am The </span>
@@ -211,6 +211,9 @@ export default function Home() {
             </div>
             <VideoPlayer src={welcomeVid} controls={playable} autoPlay={playable} />
         </div>
+      </div>
+      <div className="flex flex-col w-full">
+
       </div>
     </>
   );

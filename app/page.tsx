@@ -35,6 +35,8 @@ export default function Home() {
   const sec1 = useRef(null);
   const sec2 = useRef(null);
   const sec3 = useRef(null);
+  const sec4 = useRef(null);
+  const sec5 = useRef(null);
 
   const title1 = useRef(null);
   const title2 = useRef(null);
@@ -188,6 +190,17 @@ export default function Home() {
           trigger: sec2.current,
         },
       })
+      /*-----*/
+      gsap.set(sec5.current, {opacity: 1})
+      gsap.from(sec5.current, {
+        opacity: 0,
+        duration: 2,
+        scrollTrigger: {
+          start: "bottom center",
+          scrub: 3,
+          trigger: sec4.current,
+        },
+      })
     });
     return () => ctx.revert();
   }, [])
@@ -195,10 +208,10 @@ export default function Home() {
   const [playable, setPlayable] = useState(false);
 
   return (
-    <>
+    <div className="lg:px-8 px-4">
       <div className="flex flex-row items-center justify-center w-full flex-wrap z-10 overflow-hidden" ref={sec1}>
         <div className="flex-1 flex flex-col h-dvh pt-35 lg:pt-45 pl-8 lg:max-w-3/6 ">
-          <h1 className="text-white font-extrabold text-4xl lg:text-6xl flex flex-col gap-2">
+          <h1 className=" font-extrabold text-4xl lg:text-6xl flex flex-col gap-2">
             <span ref={title1}>FULL</span>
             <span ref={title2}>STACK</span>
             <span ref={title3}>CODER</span>
@@ -213,9 +226,9 @@ export default function Home() {
         </div>
         <div className="flex-1 min-h-dvh relative min-w-150 max-w-3/6 overflow-hidden">
           <Shape2 ref={shape1} className="absolute top-50 right-50 lg:top-55 lg:right-35 w-50 lg:w-90 h-auto"/>
-          <Rect ref={shape2} className="absolute top-55 right-50 lg:top-65 lg:right-30 w-50 lg:w-90 h-auto"/>
+          <Image ref={shape2} src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
           {/*
-            <Image ref={shape2} src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
+          <Rect ref={shape2} className="absolute top-55 right-50 lg:top-65 lg:right-30 w-50 lg:w-90 h-auto"/>
           */}
           <Shape3 ref={shape3} className="absolute top-25 lg:top-40 left-35 w-15 lg:w-20 h-auto"/>
           <Shape4 ref={shape4} className="absolute top-30 right-35 lg:top-35 lg:right-20 w-15 lg:w-20 h-auto"/>
@@ -240,7 +253,7 @@ export default function Home() {
             <VideoPlayer src={welcomeVid} controls={playable} autoPlay={playable} />
         </div>
       </div>
-      <div className="flex flex-col w-full items-center z-10 relative mt-4 mb-8" ref={sec3}>
+      <div className="flex flex-col w-full items-center z-10 relative my-4" ref={sec3}>
         <h1 className="font-extrabold text-3xl flex flex-col text-center">
           <span ref={title6}>Services I Can Provide</span>
           <span ref={title7}>For You</span>
@@ -255,8 +268,20 @@ export default function Home() {
         </div>
         <Shape1 ref={shape7} className="z-50 absolute left-0 lg:left-60 w-15 lg:w-20 h-auto"/>
         <Shape5 ref={shape8} className="z-50 absolute top-20 lg:right-60 right-0 w-10 h-auto rotate-12"/>
-        <Shape5 ref={shape9} className="z-50 absolute bottom-50 lg:bottom-20 left-0 lg:left-60 w-10 h-auto -rotate-12"/>
+        <Shape5 ref={shape9} className="z-50 absolute bottom-50 lg:-bottom-10 left-0 lg:left-60 w-10 h-auto -rotate-12"/>
       </div>
-    </>
+      <div className="flex flex-col w-full h-dvh" ref={sec4}></div>
+      <div className="flex flex-row items-center justify-between w-full mb-4 mt-50 px-20 h-100 relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg" ref={sec5}>
+          <h1 className="text-5xl font-extrabold flex flex-col">
+            <span>Contact me for the service</span>
+            <span>you want to use</span>
+          </h1>
+          <button className="rounded-sm bg-primary text-white text-sm font-semibold px-8 h-10 hover:opacity-80 cursor-pointer duration-500 ease-in-out">
+            Contact Me
+          </button>
+          <Shape4 className="absolute lg:bottom-10 left-10 w-15 h-auto"/>
+          <Shape5 className="absolute top-25 lg:top-10 right-10 w-10 h-auto rotate-12"/>
+      </div>
+    </div>
   );
 }

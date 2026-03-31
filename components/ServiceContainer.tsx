@@ -16,8 +16,8 @@ const ServiceContainer = forwardRef<HTMLDivElement, prps>(
         <div className="flex items-center justify-center w-15 h-15 rounded-full" style={{backgroundColor: `color-mix(in srgb, ${color} 15%, transparent 50%`}}>
             <Image src={logo} alt={title} />
         </div>
-        <h3 className='text-white text-lg font-bold'>{title}</h3>
-        <p className='text-white opacity-80 text-sm lg:w-1/2 w-2/3'>{description}</p>
+        <h3 className='text-lg font-bold'>{title}</h3>
+        <p className='opacity-80 text-sm lg:w-1/2 w-2/3'>{description}</p>
     </div>
   )
 })

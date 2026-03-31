@@ -11,7 +11,7 @@ const Navbar = () => {
   const [currentPage, setCurrentPage] = useState('home');
 
   return (
-    <div className='flex w-full items-center justify-between px-8 lg:px-12 pt-8 absolute text-white z-50'>
+    <div className='flex w-full items-center justify-between px-8 lg:px-12 pt-8 absolute z-50'>
         <h1 className='cursor-default'><span className='text-xl font-extrabold'>ODAY-DEV</span><span className='text-sm'>.app</span></h1>
         <ul className={`hidden4phone flex items-center justify-center gap-8 font-semibold ${styles.navList}`}>
             <li onClick={()=>{setCurrentPage("home")}} className={currentPage == "home"?styles.navSelected:""}><Link href="/">Home</Link></li>

@@ -176,7 +176,7 @@ export default function Home() {
           trigger: sec2.current,
         },
       }),
-      gsap.set([shape7.current, shape8.current, shape9.current], {y: 0, rotateZ: 0})
+      gsap.set([shape7.current, shape8.current, shape9.current], {y: 0, rotateZ: -60})
       gsap.from([shape7.current, shape8.current, shape9.current], {
         y: -100,
         rotateZ: 90,
@@ -240,22 +240,22 @@ export default function Home() {
             <VideoPlayer src={welcomeVid} controls={playable} autoPlay={playable} />
         </div>
       </div>
-      <div className="flex flex-col w-full items-center z-10 h-dvh relative mt-4" ref={sec3}>
+      <div className="flex flex-col w-full items-center z-10 relative mt-4 mb-8" ref={sec3}>
         <h1 className="font-extrabold text-3xl flex flex-col text-center">
           <span ref={title6}>Services I Can Provide</span>
           <span ref={title7}>For You</span>
         </h1>
-        <div className="flex flex-row flex-wrap w-full mt-20">
-          <ServiceContainer ref={container1} className="w-1/3 mt-8" logo={dev} color="#5454D4" title="Development" description="I build fast, scalable, and responsive websites tailored to your business needs, ensuring a seamless user experience across all devices."/>
-          <ServiceContainer ref={container2} className="w-1/3 mt-8" logo={layer} color="#F04037" title="UI/UX Design" description="I design intuitive and visually engaging user interfaces that enhance user experience and drive interaction and conversion."/>
-          <ServiceContainer ref={container3} className="w-1/3 mt-8" logo={code} color="#FEDC5A" title="Graphic Design" description="I create custom icon sets and unique logos tailored to your brand identity."/>
-          <ServiceContainer ref={container4} className="w-1/3 mt-8" logo={align} color="#FEDC5A" title="Motion Graphics" description="I design engaging motion graphics and animations that bring your ideas to life and capture attention."/>
-          <ServiceContainer ref={container5} className="w-1/3 mt-8" logo={camera} color="#5454D4" title="Product Prototyping" description="I transform ideas into interactive prototypes with intuitive design and smooth user flows, ready for testing and development."/>
-          <ServiceContainer ref={container6} className="w-1/3 mt-8" logo={server} color="#F04037" title="API Development & Integration" description="I design and integrate powerful APIs to connect systems, automate workflows, and enhance your application's functionality."/>
+        <div className="flex flex-row flex-wrap w-full lg:mt-20 mt-8">
+          <ServiceContainer ref={container1} className="lg:w-1/3 mt-8" logo={dev} color="#5454D4" title="Development" description="I build fast, scalable, and responsive websites tailored to your business needs, ensuring a seamless user experience across all devices."/>
+          <ServiceContainer ref={container2} className="lg:w-1/3 mt-8" logo={layer} color="#F04037" title="UI/UX Design" description="I design intuitive and visually engaging user interfaces that enhance user experience and drive interaction and conversion."/>
+          <ServiceContainer ref={container3} className="lg:w-1/3 mt-8" logo={code} color="#FEDC5A" title="Graphic Design" description="I create custom icon sets and unique logos tailored to your brand identity."/>
+          <ServiceContainer ref={container4} className="lg:w-1/3 mt-8" logo={align} color="#FEDC5A" title="Motion Graphics" description="I design engaging motion graphics and animations that bring your ideas to life and capture attention."/>
+          <ServiceContainer ref={container5} className="lg:w-1/3 mt-8" logo={camera} color="#5454D4" title="Product Prototyping" description="I transform ideas into interactive prototypes with intuitive design and smooth user flows, ready for testing and development."/>
+          <ServiceContainer ref={container6} className="lg:w-1/3 mt-8" logo={server} color="#F04037" title="API Development & Integration" description="I design and integrate powerful APIs to connect systems, automate workflows, and enhance your application's functionality."/>
         </div>
-        <Shape1 ref={shape7} className="z-50 absolute left-60 w-15 lg:w-20 h-auto"/>
-        <Shape5 ref={shape8} className="z-50 absolute top-20 right-60 w-10 h-auto rotate-12"/>
-        <Shape5 ref={shape9} className="z-50 absolute bottom-20 left-60 w-10 h-auto -rotate-12"/>
+        <Shape1 ref={shape7} className="z-50 absolute left-0 lg:left-60 w-15 lg:w-20 h-auto"/>
+        <Shape5 ref={shape8} className="z-50 absolute top-20 lg:right-60 right-0 w-10 h-auto rotate-12"/>
+        <Shape5 ref={shape9} className="z-50 absolute bottom-50 lg:bottom-20 left-0 lg:left-60 w-10 h-auto -rotate-12"/>
       </div>
     </>
   );

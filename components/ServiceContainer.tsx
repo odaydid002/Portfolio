@@ -17,7 +17,7 @@ const ServiceContainer = forwardRef<HTMLDivElement, prps>(
             <Image src={logo} alt={title} />
         </div>
         <h3 className='text-white text-lg font-bold'>{title}</h3>
-        <p className='text-white opacity-80 text-sm lg:w-1/2'>{description}</p>
+        <p className='text-white opacity-80 text-sm lg:w-1/2 w-2/3'>{description}</p>
     </div>
   )
 })

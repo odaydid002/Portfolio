@@ -4,6 +4,7 @@ import instagram from "@/assets/instagram.svg";
 import telegram from "@/assets/telegram.svg";
 import linkedin from "@/assets/linkedin.svg";
 import menu from "@/assets/menu.svg";
+import play from "@/assets/play.svg";
 
 export { 
     Tie,
@@ -11,5 +12,6 @@ export {
     instagram,
     telegram,
     linkedin,
-    menu
+    menu,
+    play
 };

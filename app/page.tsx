@@ -24,6 +24,35 @@ gsap.registerPlugin(ScrollTrigger);
 export const dynamic = 'force-dynamic'
 
 export default function Home() {
+
+  const scrollUp = () => {
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, 100);
+  }
+
+  useEffect(() => {
+    const handleLoad = () => {
+      window.scrollTo({
+        top: 99999,
+      });
+      scrollUp()
+    };
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
+  }, []);
+
+
   const [width, setWidth] = useState<number | null>(null);
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -209,6 +238,9 @@ export default function Home() {
 
   return (
     <div className="lg:px-8 px-4 w-full overflow-hidden">
+      <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full hidden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
+        &#8686;
+      </button>
       <div className="flex flex-row items-center justify-center w-full flex-wrap z-10 overflow-hidden" ref={sec1}>
         <div className="flex-1 flex flex-col h-dvh pt-35 lg:pt-45 pl-8 lg:max-w-3/6 ">
           <h1 className=" font-extrabold text-4xl lg:text-6xl flex flex-col gap-2">
@@ -267,7 +299,9 @@ export default function Home() {
         <Shape5 ref={shape8} className="z-50 absolute top-20 lg:right-60 right-0 w-10 h-auto rotate-12"/>
         <Shape5 ref={shape9} className="z-50 absolute bottom-50 lg:-bottom-10 left-0 lg:left-60 w-10 h-auto -rotate-12"/>
       </div>
-      <div className="flex flex-col w-full h-dvh" ref={sec4}></div>
+      <div className="flex flex-col w-full h-dvh" ref={sec4}>
+        
+      </div>
       <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full gap-8 lg:gap-0 mb-4 mt-50 lg:px-20 px-8 h-60 lg:h-100 relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg" ref={sec5}>
           <h1 className="lg:text-5xl text-xl font-extrabold flex flex-col">
             <span>Contact me for the service</span>

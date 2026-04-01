@@ -20,6 +20,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const scrollUp = () => {
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, 100);
+  }
   return (
     <html
       lang="en"

@@ -38,20 +38,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col relative items-center overflow-x-hidden">
-        <div 
-          className="rounded-full w-100 h-250 z-0 opacity-20 fixed left-50 bg-primary anime-fade" 
-          style={{
-            filter:"blur(150px)",
-            transform: "rotateZ(-50deg)"
-          }}
-        ></div>
-        <div 
-          className="bg-secondary rounded-full w-100 h-250 z-0 opacity-20 fixed right-50 top-50 anime-fade" 
-          style={{
-            filter:"blur(150px)",
-            transform: "rotateZ(50deg)"
-          }}
-        ></div>
         <Navbar />
         {children}
         <Footer />

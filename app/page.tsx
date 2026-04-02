@@ -363,7 +363,22 @@ export default function Home() {
   const [playable, setPlayable] = useState(false);
 
   return (
-    <div className="lg:px-30 px-8 w-full overflow-hidden relative" ref={doc}>
+    <div className="lg:px-30 px-8 w-full relative" ref={doc}>
+
+      <div 
+        className="rounded-full w-100 h-250 z-0 opacity-20 fixed left-50 bg-primary anime-fade" 
+        style={{
+          filter:"blur(150px)",
+          transform: "rotateZ(-50deg)"
+        }}
+      ></div>
+      <div 
+        className="bg-secondary rounded-full w-100 h-250 z-0 opacity-20 fixed right-50 top-50 anime-fade" 
+        style={{
+          filter:"blur(150px)",
+          transform: "rotateZ(50deg)"
+        }}
+      ></div>
 
       <BracesIcon ref={shape10} className="absolute z-99 w-10"/>
       <ReactIcon ref={shape11} className="absolute z-99 w-10 lg:right-30 right-5"/>

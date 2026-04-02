@@ -19,9 +19,9 @@ const Navbar = () => {
           <Glass className="relative px-12 py-3 over" rounded={25}>
             <ul className={`hidden4phone flex items-center justify-center gap-8 font-extralight ${styles.navList}`}>
                 <li onClick={()=>{setCurrentPage("home")}} className={currentPage == "home"?styles.navSelected:""}><Link href="/">Home</Link></li>
-                <li onClick={()=>{setCurrentPage("services")}} className={currentPage == "services"?styles.navSelected:""}><Link href="/services">Services</Link></li>
-                <li onClick={()=>{setCurrentPage("contact")}} className={currentPage == "contact"?styles.navSelected:""}><Link href="/contact">Contact</Link></li>
-                <li onClick={()=>{setCurrentPage("about")}} className={currentPage == "about"?styles.navSelected:""}><Link href="/about">About</Link></li>
+                <li onClick={()=>{setCurrentPage("Career")}} className={currentPage == "Career"?styles.navSelected:""}><Link href="/">Career</Link></li>
+                <li onClick={()=>{setCurrentPage("contact")}} className={currentPage == "contact"?styles.navSelected:""}><Link href="/">Contact</Link></li>
+                <li onClick={()=>{setCurrentPage("about")}} className={currentPage == "about"?styles.navSelected:""}><Link href="/">About</Link></li>
             </ul>
           </Glass>
         </div>

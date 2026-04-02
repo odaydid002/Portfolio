@@ -19,7 +19,26 @@ import { welcomeVid } from "@/constants/videos";
 import ServiceContainer from "@/components/ServiceContainer";
 import Glass from "@/components/container/Glass";
 import Showcase from "@/components/container/Showcase";
+import JavaIcon from "@/components/svg/JavaIcon";
+import ProgrammingIcon from "@/components/svg/ProgrammingIcon";
+import DatabaseIcon from "@/components/svg/DatabaseIcon";
+import AnymosIcon from "@/components/svg/AnymosIcon";
+import BracesIcon from "@/components/svg/BracesIcon";
+import ReactIcon from "@/components/svg/ReactIcon";
+import DebugIcon from "@/components/svg/DebugIcon";
+import CodeIcon from "@/components/svg/CodeIcon";
+import TerminalIcon from "@/components/svg/TerminalIcon";
+import TreeIcon from "@/components/svg/TreeIcon";
 
+const getPageHeight = (): number => {
+  return Math.max(
+    document.body.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.scrollHeight,
+    document.documentElement.offsetHeight,
+    document.documentElement.clientHeight
+  );
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,6 +106,12 @@ export default function Home() {
   const shape7 = useRef(null);
   const shape8 = useRef(null);
   const shape9 = useRef(null);
+  const shape10 = useRef(null);
+  const shape11 = useRef(null);
+  const shape12 = useRef(null);
+  const shape13 = useRef(null);
+  const shape14 = useRef(null);
+  const shape15 = useRef(null);
 
   const button1 = useRef(null);
   
@@ -105,11 +130,27 @@ export default function Home() {
   const container8 = useRef(null);
   const container9 = useRef(null);
 
+  const doc = useRef(null);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.set([shape3.current, shape4.current, shape5.current, shape6.current], {y: 50, opacity: 0})
-      gsap.from([shape3.current, shape4.current, shape5.current, shape6.current], {
+      gsap.set([shape3.current, shape5.current], {y: 50, opacity: 0, rotateZ: 0})
+      gsap.from([shape3.current, shape5.current], {
         y: 0,
+        rotateZ: 12,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 3,
+          trigger: sec1.current,
+        },
+      }),
+      gsap.set([shape4.current, shape6.current], {y: 50, opacity: 0, rotateZ: 0})
+      gsap.from([shape4.current, shape6.current], {
+        y: 0,
+        rotateZ: -12,
         opacity: 1,
         duration: 1,
         stagger: 0.1,
@@ -260,6 +301,60 @@ export default function Home() {
           scrub: 3,
           trigger: sec4.current,
         },
+      }),
+      /*-----*/
+      gsap.set(shape10.current, {y: Math.ceil(getPageHeight() / 4)})
+      gsap.from(shape10.current, {
+        y: Math.ceil(getPageHeight() / 2),
+        duration: 2,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 3,
+          trigger: doc.current,
+        },
+      }),
+      gsap.set(shape11.current, {y: Math.ceil(getPageHeight() / 3), rotateZ: 0})
+      gsap.from(shape11.current, {
+        y: Math.ceil(getPageHeight() / 3) + 500,
+        rotateZ: 360,
+        duration: 2,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 3,
+          trigger: doc.current,
+        },
+      }),
+      gsap.set(shape12.current, {y: Math.ceil(getPageHeight() / 2)})
+      gsap.from(shape12.current, {
+        y: Math.ceil(getPageHeight() / 2) + 500,
+        duration: 2,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 3,
+          trigger: doc.current,
+        },
+      }),
+      gsap.set(shape13.current, {y: Math.ceil(getPageHeight() / 4)})
+      gsap.from(shape13.current, {
+        y: Math.ceil(getPageHeight() / 4) + 200,
+        duration: 2,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 3,
+          trigger: doc.current,
+        },
+      }),
+      /*-----*/
+      gsap.set([shape14.current, shape15.current], {y: 100})
+      gsap.from([shape14.current, shape15.current], {
+        y: 0,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 3,
+          trigger: sec3.current,
+        },
       })
     });
     return () => ctx.revert();
@@ -268,7 +363,12 @@ export default function Home() {
   const [playable, setPlayable] = useState(false);
 
   return (
-    <div className="lg:px-30 px-4 w-full overflow-hidden">
+    <div className="lg:px-30 px-4 w-full overflow-hidden relative" ref={doc}>
+
+      <BracesIcon ref={shape10} className="absolute z-99 w-10"/>
+      <ReactIcon ref={shape11} className="absolute z-99 w-10 right-30"/>
+      <DebugIcon ref={shape12} className="absolute z-99 w-10 left-30"/>
+      <CodeIcon ref={shape13} className="absolute z-99 w-10 right-10"/>
       
       <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full hidden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
         &#8686;
@@ -294,10 +394,10 @@ export default function Home() {
           {/*
             <Image ref={shape2} src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
           */}
-          <Shape3 ref={shape3} className="absolute top-25 lg:top-30 left-25 w-15 lg:w-20 h-auto"/>
-          <Shape4 ref={shape4} className="absolute top-30 right-35 lg:top-25 lg:right-20 w-15 lg:w-20 h-auto"/>
-          <Shape1 ref={shape5} className="absolute bottom-40 left-35 lg:bottom-35 lg:left-20 w-15 lg:w-20 h-auto"/>
-          <Shape5 ref={shape6} className="absolute bottom-35 right-35 lg:bottom-30 lg:right-20 w-10 lg:w-15 h-auto"/>
+          <JavaIcon ref={shape3} className="absolute top-25 lg:top-30 left-15 w-15 lg:w-20 h-auto -rotate-12"/>
+          <ProgrammingIcon ref={shape4} className="absolute top-30 right-35 lg:top-25 lg:right-10 w-15 lg:w-20 h-auto rotate-12"/>
+          <DatabaseIcon ref={shape5} className="absolute bottom-40 left-35 lg:bottom-35 lg:left-15 w-15 h-auto -rotate-6"/>
+          <AnymosIcon ref={shape6} className="absolute bottom-35 right-35 lg:bottom-30 lg:right-20 w-10 lg:w-15 h-auto rotate-6"/>
         </div>
       </div>
       <div className="flex flex-col w-full overflow-hidden lg:pt-8 pt-16 pb-8 z-10" ref={sec2}>
@@ -334,13 +434,15 @@ export default function Home() {
         <Shape5 ref={shape8} className="z-50 absolute top-20 lg:right-60 right-0 w-10 h-auto rotate-12"/>
         <Shape5 ref={shape9} className="z-50 absolute bottom-50 lg:-bottom-10 left-0 lg:left-60 w-10 h-auto -rotate-12"/>
       </div>
-      <div className="flex flex-col w-full mt-25 mb-8" ref={sec4}>
+      <div className="flex flex-col w-full mt-25 mb-4 relative" ref={sec4}>
         <h1 className="font-extrabold text-3xl" ref={title8}>My Creative Showcase</h1>
         <div className="flex flex-row justify-center gap-8 w-full flex-wrap mt-15">
             <Showcase className="h-fit rounded-2xl" image={showcase1} ref={container7}/>
             <Showcase className="h-fit mt-20 rounded-2xl" image={showcase2} ref={container8}/>
             <Showcase className="h-fit mt-40 rounded-2xl" image={showcase3} ref={container9}/>
         </div>
+        <TerminalIcon ref={shape14} className="absolute z-99 w-10 right-10 top-5 -rotate-12"/>
+        <TreeIcon ref={shape15} className="absolute z-99 w-10 left-10 bottom-15 rotate-12"/>
       </div>
       <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full gap-8 lg:gap-0 mb-4 mt-50 lg:px-20 px-8 h-60 lg:h-100 relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg" ref={sec5}>
           <h1 className="lg:text-5xl text-xl font-extrabold flex flex-col">

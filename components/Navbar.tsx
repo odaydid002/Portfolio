@@ -13,7 +13,7 @@ const Navbar = () => {
   const [currentPage, setCurrentPage] = useState('home');
 
   return (
-    <div className='flex w-11/12 mt-4 items-center justify-between px-8 lg:px-12 py-2 z-99'>
+    <div className='flex w-11/12 mt-4 items-center justify-between px-2 lg:px-12 py-2 z-99'>
         <h1 className='cursor-default'><span className='text-lg font-extrabold'>ODAY-DEV</span><span className='text-sm'>.app</span></h1>
         <div className="fixed z-999 left-1/2 -translate-x-1/2 hidden4phone">
           <Glass className="relative px-12 py-3 over" rounded={25}>

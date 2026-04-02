@@ -272,7 +272,7 @@ export default function Home() {
         opacity: 0,
         duration: 2,
         scrollTrigger: {
-          start: "bottom center",
+          start: "bottom bottom",
           scrub: 3,
           trigger: sec4.current,
         },
@@ -326,7 +326,7 @@ export default function Home() {
       }),
       gsap.set(shape12.current, {y: Math.ceil(getPageHeight() / 2)})
       gsap.from(shape12.current, {
-        y: Math.ceil(getPageHeight() / 2) + 500,
+        y: Math.ceil(getPageHeight() / 2) + 200,
         duration: 2,
         scrollTrigger: {
           start: "top top",
@@ -363,12 +363,12 @@ export default function Home() {
   const [playable, setPlayable] = useState(false);
 
   return (
-    <div className="lg:px-30 px-4 w-full overflow-hidden relative" ref={doc}>
+    <div className="lg:px-30 px-8 w-full overflow-hidden relative" ref={doc}>
 
       <BracesIcon ref={shape10} className="absolute z-99 w-10"/>
-      <ReactIcon ref={shape11} className="absolute z-99 w-10 right-30"/>
-      <DebugIcon ref={shape12} className="absolute z-99 w-10 left-30"/>
-      <CodeIcon ref={shape13} className="absolute z-99 w-10 right-10"/>
+      <ReactIcon ref={shape11} className="absolute z-99 w-10 lg:right-30 right-5"/>
+      <DebugIcon ref={shape12} className="absolute z-99 w-10 lg:left-30 left-5"/>
+      <CodeIcon ref={shape13} className="absolute z-99 w-10 lg:right-10"/>
       
       <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full hidden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
         &#8686;
@@ -435,16 +435,16 @@ export default function Home() {
         <Shape5 ref={shape9} className="z-50 absolute bottom-50 lg:-bottom-10 left-0 lg:left-60 w-10 h-auto -rotate-12"/>
       </div>
       <div className="flex flex-col w-full mt-25 mb-4 relative" ref={sec4}>
-        <h1 className="font-extrabold text-3xl" ref={title8}>My Creative Showcase</h1>
-        <div className="flex flex-row justify-center gap-8 w-full flex-wrap mt-15">
+        <h1 className="font-extrabold text-2xl lg:text-3xl" ref={title8}>My Creative Showcase</h1>
+        <div className="flex flex-row justify-center gap-4 lg:gap-8 w-full flex-wrap lg:mt-15">
             <Showcase className="h-fit rounded-2xl" image={showcase1} ref={container7}/>
-            <Showcase className="h-fit mt-20 rounded-2xl" image={showcase2} ref={container8}/>
-            <Showcase className="h-fit mt-40 rounded-2xl" image={showcase3} ref={container9}/>
+            <Showcase className="h-fit lg:mt-20 rounded-2xl" image={showcase2} ref={container8}/>
+            <Showcase className="h-fit lg:mt-40 rounded-2xl" image={showcase3} ref={container9}/>
         </div>
-        <TerminalIcon ref={shape14} className="absolute z-99 w-10 right-10 top-5 -rotate-12"/>
-        <TreeIcon ref={shape15} className="absolute z-99 w-10 left-10 bottom-15 rotate-12"/>
+        <TerminalIcon ref={shape14} className="absolute z-99 w-5 lg:w-10 lg:right-10 right-0 top-5 -rotate-12"/>
+        <TreeIcon ref={shape15} className="absolute z-99 w-5 lg:w-10 lg:left-10 left-0 bottom-15 rotate-12"/>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full gap-8 lg:gap-0 mb-4 mt-50 lg:px-20 px-8 h-60 lg:h-100 relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg" ref={sec5}>
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full gap-8 lg:gap-0 mb-4 mt-10 lg:mt-50 lg:px-20 px-8 h-60 lg:h-100 relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg" ref={sec5}>
           <h1 className="lg:text-5xl text-xl font-extrabold flex flex-col">
             <span>Contact me for the service</span>
             <span>you want to use</span>

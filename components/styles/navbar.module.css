@@ -1,6 +1,7 @@
 .navList li{
     cursor: pointer;
     transition: ease-in-out 0.4s;
+    font-size: 0.9rem;
 }
 
 .navList li:hover{
@@ -12,6 +13,7 @@
 .navSelected{
     opacity: 0.5;
     color: #5454D4;
+    font-weight: bold;
     transform: scale(1.05);
 }
 

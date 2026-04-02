@@ -1,7 +1,6 @@
 import { forwardRef } from "react";
 
-const Rect = forwardRef<SVGSVGElement, { className?: string }>(
-  ({ className }, ref) => {
+const Rect = forwardRef<SVGSVGElement, { className?: string }>(({ className }, ref) => {
     return(
     <svg
       xmlns="http://www.w3.org/2000/svg"

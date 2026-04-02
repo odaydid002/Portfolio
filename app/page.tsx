@@ -13,10 +13,12 @@ import Shape3 from "@/components/svg/Shape3";
 import Shape4 from "@/components/svg/Shape4";
 import Shape5 from "@/components/svg/Shape5";
 import Image from "next/image";
-import { oday } from "@/constants/images";
+import { oday, showcase1, showcase2, showcase3 } from "@/constants/images";
 import VideoPlayer from "@/components/VideoPlayer";
 import { welcomeVid } from "@/constants/videos";
 import ServiceContainer from "@/components/ServiceContainer";
+import Glass from "@/components/container/Glass";
+import Showcase from "@/components/container/Showcase";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -74,6 +76,7 @@ export default function Home() {
   const title5 = useRef(null);
   const title6 = useRef(null);
   const title7 = useRef(null);
+  const title8 = useRef(null);
 
   const shape1 = useRef(null);
   const shape2 = useRef(null);
@@ -98,6 +101,9 @@ export default function Home() {
   const container4 = useRef(null);
   const container5 = useRef(null);
   const container6 = useRef(null);
+  const container7 = useRef(null);
+  const container8 = useRef(null);
+  const container9 = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -229,6 +235,31 @@ export default function Home() {
           scrub: 3,
           trigger: sec4.current,
         },
+      }),
+      /*-----*/
+      gsap.set(title8.current, {x: 0, opacity: 1})
+      gsap.from(title8.current, {
+        x: -100,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        scrollTrigger: {
+          start: "top top",
+          scrub: 2,
+          trigger: sec3.current,
+        },
+      }),
+      gsap.set([container7.current, container8.current, , container9.current], {y: 0, opacity: 1})
+      gsap.from([container7.current, container8.current, , container9.current], {
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        scrollTrigger: {
+          start: "center top",
+          scrub: 3,
+          trigger: sec3.current,
+        },
       })
     });
     return () => ctx.revert();
@@ -237,12 +268,13 @@ export default function Home() {
   const [playable, setPlayable] = useState(false);
 
   return (
-    <div className="lg:px-8 px-4 w-full overflow-hidden">
+    <div className="lg:px-30 px-4 w-full overflow-hidden">
+      
       <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full hidden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
         &#8686;
       </button>
       <div className="flex flex-row items-center justify-center w-full flex-wrap z-10 overflow-hidden" ref={sec1}>
-        <div className="flex-1 flex flex-col h-dvh pt-35 lg:pt-45 pl-8 lg:max-w-3/6 ">
+        <div className="flex-1 flex flex-col h-dvh pt-20 lg:pt-30 lg:max-w-3/6 ">
           <h1 className=" font-extrabold text-4xl lg:text-6xl flex flex-col gap-2">
             <span ref={title1}>FULL</span>
             <span ref={title2}>STACK</span>
@@ -257,12 +289,15 @@ export default function Home() {
           </button>
         </div>
         <div className="flex-1 min-h-dvh relative min-w-150 max-w-3/6 overflow-hidden">
-          <Shape2 ref={shape1} className="absolute top-50 right-50 lg:top-55 lg:right-35 w-50 lg:w-90 h-auto"/>
-          <Rect ref={shape2} className="absolute top-55 right-50 lg:top-65 lg:right-30 w-50 lg:w-90 h-auto"/>
-          <Shape3 ref={shape3} className="absolute top-25 lg:top-40 left-35 w-15 lg:w-20 h-auto"/>
-          <Shape4 ref={shape4} className="absolute top-30 right-35 lg:top-35 lg:right-20 w-15 lg:w-20 h-auto"/>
-          <Shape1 ref={shape5} className="absolute bottom-40 left-35 lg:bottom-15 lg:left-20 w-15 lg:w-20 h-auto"/>
-          <Shape5 ref={shape6} className="absolute bottom-35 right-35 lg:bottom-10 lg:right-20 w-10 lg:w-15 h-auto"/>
+          <Shape2 ref={shape1} className="absolute top-50 right-50 lg:top-35 lg:right-35 w-50 lg:w-90 h-auto"/>
+          <Rect ref={shape2} className="absolute top-55 right-50 lg:top-45 lg:right-30 w-50 lg:w-90 h-auto"/>
+          {/*
+            <Image ref={shape2} src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
+          */}
+          <Shape3 ref={shape3} className="absolute top-25 lg:top-30 left-25 w-15 lg:w-20 h-auto"/>
+          <Shape4 ref={shape4} className="absolute top-30 right-35 lg:top-25 lg:right-20 w-15 lg:w-20 h-auto"/>
+          <Shape1 ref={shape5} className="absolute bottom-40 left-35 lg:bottom-35 lg:left-20 w-15 lg:w-20 h-auto"/>
+          <Shape5 ref={shape6} className="absolute bottom-35 right-35 lg:bottom-30 lg:right-20 w-10 lg:w-15 h-auto"/>
         </div>
       </div>
       <div className="flex flex-col w-full overflow-hidden lg:pt-8 pt-16 pb-8 z-10" ref={sec2}>
@@ -287,20 +322,25 @@ export default function Home() {
           <span ref={title6}>Services I Can Provide</span>
           <span ref={title7}>For You</span>
         </h1>
-        <div className="flex flex-row flex-wrap w-full lg:mt-20 mt-8">
+        <div className="flex flex-row flex-wrap items-center justify-center w-full lg:mt-20 mt-8">
           <ServiceContainer ref={container1} className="lg:w-1/3 mt-8" logo={dev} color="#5454D4" title="Development" description="I build fast, scalable, and responsive websites tailored to your business needs, ensuring a seamless user experience across all devices."/>
           <ServiceContainer ref={container2} className="lg:w-1/3 mt-8" logo={layer} color="#F04037" title="UI/UX Design" description="I design intuitive and visually engaging user interfaces that enhance user experience and drive interaction and conversion."/>
-          <ServiceContainer ref={container3} className="lg:w-1/3 mt-8" logo={code} color="#FEDC5A" title="Graphic Design" description="I create custom icon sets and unique logos tailored to your brand identity."/>
+          <ServiceContainer ref={container3} className="lg:w-1/3 mt-8" logo={code} color="#34C759" title="Graphic Design" description="I create custom icon sets and unique logos tailored to your brand identity."/>
           <ServiceContainer ref={container4} className="lg:w-1/3 mt-8" logo={align} color="#FEDC5A" title="Motion Graphics" description="I design engaging motion graphics and animations that bring your ideas to life and capture attention."/>
-          <ServiceContainer ref={container5} className="lg:w-1/3 mt-8" logo={camera} color="#5454D4" title="Product Prototyping" description="I transform ideas into interactive prototypes with intuitive design and smooth user flows, ready for testing and development."/>
-          <ServiceContainer ref={container6} className="lg:w-1/3 mt-8" logo={server} color="#F04037" title="API Development & Integration" description="I design and integrate powerful APIs to connect systems, automate workflows, and enhance your application's functionality."/>
+          <ServiceContainer ref={container5} className="lg:w-1/3 mt-8" logo={camera} color="#FF2D55" title="Product Prototyping" description="I transform ideas into interactive prototypes with intuitive design and smooth user flows, ready for testing and development."/>
+          <ServiceContainer ref={container6} className="lg:w-1/3 mt-8" logo={server} color="#00C8B3" title="API Development & Integration" description="I design and integrate powerful APIs to connect systems, automate workflows, and enhance your application's functionality."/>
         </div>
         <Shape1 ref={shape7} className="z-50 absolute left-0 lg:left-60 w-15 lg:w-20 h-auto"/>
         <Shape5 ref={shape8} className="z-50 absolute top-20 lg:right-60 right-0 w-10 h-auto rotate-12"/>
         <Shape5 ref={shape9} className="z-50 absolute bottom-50 lg:-bottom-10 left-0 lg:left-60 w-10 h-auto -rotate-12"/>
       </div>
-      <div className="flex flex-col w-full h-dvh" ref={sec4}>
-        
+      <div className="flex flex-col w-full mt-25 mb-8" ref={sec4}>
+        <h1 className="font-extrabold text-3xl" ref={title8}>My Creative Showcase</h1>
+        <div className="flex flex-row justify-between w-full flex-wrap mt-15">
+            <Showcase className="h-fit rounded-2xl" image={showcase1} ref={container7}/>
+            <Showcase className="h-fit mt-20 rounded-2xl" image={showcase2} ref={container8}/>
+            <Showcase className="h-fit mt-40 rounded-2xl" image={showcase3} ref={container9}/>
+        </div>
       </div>
       <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full gap-8 lg:gap-0 mb-4 mt-50 lg:px-20 px-8 h-60 lg:h-100 relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg" ref={sec5}>
           <h1 className="lg:text-5xl text-xl font-extrabold flex flex-col">

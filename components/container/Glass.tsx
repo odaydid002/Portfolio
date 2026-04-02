@@ -12,13 +12,13 @@ interface prps {
 const Glass = ({className = "", children, tint = true, shine = true, rounded = 25}:prps) => {
   return (
     <>
-        <div className={`${className} ${styles.glass} rounded-[${rounded}px]`}>
-            <div className={`${styles.effect} rounded-[${rounded}px]`}></div>
+        <div className={`${className} ${styles.glass}`} style={{borderRadius: `${rounded}px`}}>
+            <div className={`${styles.effect}`} style={{borderRadius: `${rounded}px`}}></div>
             {tint && (
-                <div className={`${styles.tint} rounded-[${rounded}px]`}></div>
+                <div className={`${styles.tint}`} style={{borderRadius: `${rounded}px`}}></div>
             )}
             {shine && (
-                <div className={`${styles.shine} rounded-[${rounded}px]`}></div>
+                <div className={`${styles.shine}`} style={{borderRadius: `${rounded}px`}}></div>
             )}
             {children}
         </div>

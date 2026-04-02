@@ -253,12 +253,12 @@ export default function Home() {
       gsap.from([container7.current, container8.current, , container9.current], {
         y: 100,
         opacity: 0,
-        duration: 0.5,
+        duration: 1,
         stagger: 0.1,
         scrollTrigger: {
-          start: "center top",
+          start: "top bottom",
           scrub: 3,
-          trigger: sec3.current,
+          trigger: sec4.current,
         },
       })
     });
@@ -273,7 +273,7 @@ export default function Home() {
       <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full hidden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
         &#8686;
       </button>
-      <div className="flex flex-row items-center justify-center w-full flex-wrap z-10 overflow-hidden" ref={sec1}>
+      <div className="flex relative flex-row items-center justify-center w-full flex-wrap z-10 overflow-hidden" ref={sec1}>
         <div className="flex-1 flex flex-col h-dvh pt-20 lg:pt-30 lg:max-w-3/6 ">
           <h1 className=" font-extrabold text-4xl lg:text-6xl flex flex-col gap-2">
             <span ref={title1}>FULL</span>
@@ -336,7 +336,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col w-full mt-25 mb-8" ref={sec4}>
         <h1 className="font-extrabold text-3xl" ref={title8}>My Creative Showcase</h1>
-        <div className="flex flex-row justify-between w-full flex-wrap mt-15">
+        <div className="flex flex-row justify-center gap-8 w-full flex-wrap mt-15">
             <Showcase className="h-fit rounded-2xl" image={showcase1} ref={container7}/>
             <Showcase className="h-fit mt-20 rounded-2xl" image={showcase2} ref={container8}/>
             <Showcase className="h-fit mt-40 rounded-2xl" image={showcase3} ref={container9}/>

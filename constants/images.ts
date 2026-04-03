@@ -1,4 +1,5 @@
-import oday from "@/assets/rect1.svg";
+import oday from "@/assets/oday.svg";
+import oday2 from "@/assets/oday2.svg";
 import logo from "@/assets/logo.png";
 import showcase1 from '@/assets/showcase1.svg'
 import showcase2 from '@/assets/showcase2.svg'
@@ -6,6 +7,7 @@ import showcase3 from '@/assets/showcase3.svg'
 
 export { 
     oday, 
+    oday2, 
     logo, 
     showcase1, 
     showcase2,

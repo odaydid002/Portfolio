@@ -9,8 +9,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
-  --color-primary: #5454D4;
-  --color-secondary: #E05688;
+  --color-primary: #009B77;
+  --color-secondary: #EFC050;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -91,6 +91,6 @@ body {
     border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #5454D4;
+    background-color: var(--color-primary);
     border-radius: 5px;
 }

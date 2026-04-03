@@ -16,7 +16,7 @@ const Rect = forwardRef<SVGSVGElement, { className?: string }>(({ className }, r
         height="379.337"
         rx="24.179"
         transform="rotate(23.639 149.97 -2.63413)"
-        fill="#5454D4"
+        fill="var(--color-primary)"
         stroke="white"
         strokeWidth="4"
       />

@@ -13,7 +13,7 @@ import Shape3 from "@/components/svg/Shape3";
 import Shape4 from "@/components/svg/Shape4";
 import Shape5 from "@/components/svg/Shape5";
 import Image from "next/image";
-import { oday, showcase1, showcase2, showcase3 } from "@/constants/images";
+import { oday, oday2, showcase1, showcase2, showcase3 } from "@/constants/images";
 import VideoPlayer from "@/components/VideoPlayer";
 import { welcomeVid } from "@/constants/videos";
 import ServiceContainer from "@/components/ServiceContainer";
@@ -134,11 +134,10 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.set([shape3.current, shape5.current], {y: 50, opacity: 0, rotateZ: 0})
+      gsap.set([shape3.current, shape5.current], {y: 50, rotateZ: 0})
       gsap.from([shape3.current, shape5.current], {
         y: 0,
         rotateZ: 12,
-        opacity: 1,
         duration: 1,
         stagger: 0.1,
         scrollTrigger: {
@@ -147,11 +146,10 @@ export default function Home() {
           trigger: sec1.current,
         },
       }),
-      gsap.set([shape4.current, shape6.current], {y: 50, opacity: 0, rotateZ: 0})
+      gsap.set([shape4.current, shape6.current], {y: 50, rotateZ: 0})
       gsap.from([shape4.current, shape6.current], {
         y: 0,
         rotateZ: -12,
-        opacity: 1,
         duration: 1,
         stagger: 0.1,
         scrollTrigger: {
@@ -380,10 +378,10 @@ export default function Home() {
         }}
       ></div>
 
-      <BracesIcon ref={shape10} className="absolute z-99 w-10"/>
-      <ReactIcon ref={shape11} className="absolute z-99 w-10 lg:right-30 right-5"/>
-      <DebugIcon ref={shape12} className="absolute z-99 w-10 lg:left-30 left-5"/>
-      <CodeIcon ref={shape13} className="absolute z-99 w-10 lg:right-10"/>
+      <BracesIcon ref={shape10} className="absolute top-50 lg:top-none z-99 w-8 lg:w-10"/>
+      <ReactIcon ref={shape11} className="absolute top-50 lg:top-none z-99 w-8 lg:w-10 lg:right-30 right-5"/>
+      <DebugIcon ref={shape12} className="absolute top-50 lg:top-none z-99 w-8 lg:w-10 lg:left-30 left-5"/>
+      <CodeIcon ref={shape13} className="absolute top-50 lg:top-none z-99 w-8 lg:w-10 lg:right-10"/>
       
       <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full hidden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
         &#8686;
@@ -403,16 +401,17 @@ export default function Home() {
             </span>
           </button>
         </div>
-        <div className="flex-1 min-h-dvh relative min-w-150 max-w-3/6 overflow-hidden">
-          <Shape2 ref={shape1} className="absolute top-50 right-50 lg:top-35 lg:right-35 w-50 lg:w-90 h-auto"/>
-          <Rect ref={shape2} className="absolute top-55 right-50 lg:top-45 lg:right-30 w-50 lg:w-90 h-auto"/>
+        <div className="flex-1 lg:h-dvh min-h-120 relative min-w-150 max-w-3/6 overflow-hidden">
+          <Shape2 ref={shape1} className="absolute top-20 right-50 lg:top-35 lg:right-35 w-60 lg:w-90 h-auto"/>
+          <Image ref={shape2} src={oday} alt="oday" className="absolute top-0 lg:right-19 right-35 lg:w-120 w-80"/>
           {/*
-            <Image ref={shape2} src={oday} alt="oday" width={470} className="absolute top-23 right-15"/>
+          <Image ref={shape2} src={oday} alt="oday" className="absolute top-0 lg:right-19 right-35 lg:w-120 w-80"/>
+          <Rect ref={shape2} className="absolute top-55 right-50 lg:top-45 lg:right-30 w-50 lg:w-90 h-auto"/>
           */}
-          <JavaIcon ref={shape3} className="absolute top-25 lg:top-30 left-15 w-15 lg:w-20 h-auto -rotate-12"/>
-          <ProgrammingIcon ref={shape4} className="absolute top-30 right-35 lg:top-25 lg:right-10 w-15 lg:w-20 h-auto rotate-12"/>
-          <DatabaseIcon ref={shape5} className="absolute bottom-40 left-35 lg:bottom-35 lg:left-15 w-15 h-auto -rotate-6"/>
-          <AnymosIcon ref={shape6} className="absolute bottom-35 right-35 lg:bottom-30 lg:right-20 w-10 lg:w-15 h-auto rotate-6"/>
+          <JavaIcon ref={shape3} className="absolute top-25 lg:top-30 lg:left-15 w-8 lg:w-15 h-auto -rotate-12"/>
+          <ProgrammingIcon ref={shape4} className="absolute top-20 right-35 lg:top-25 lg:right-10 w-10 lg:w-15 h-auto rotate-12"/>
+          <DatabaseIcon ref={shape5} className="absolute bottom-20 left-35 lg:bottom-35 lg:left-15 lg:w-15 w-10 h-auto -rotate-6"/>
+          <AnymosIcon ref={shape6} className="absolute bottom-35 right-35 lg:bottom-30 lg:right-20 w-8 lg:w-15 h-auto rotate-6"/>
         </div>
       </div>
       <div className="flex flex-col w-full overflow-hidden lg:pt-8 pt-16 pb-8 z-10" ref={sec2}>

@@ -21,7 +21,7 @@ const AnymosIcon = forwardRef<SVGSVGElement, ShapeProps>(
         />
         <path
           d="M98.3333 88.5C98.3333 80.3536 91.7297 73.75 83.5833 73.75C75.4368 73.75 68.8333 80.3536 68.8333 88.5C68.8333 96.6464 75.4368 103.25 83.5833 103.25C91.7297 103.25 98.3333 96.6464 98.3333 88.5Z"
-          stroke="currentColor"
+          stroke="var(--color-primary)"
           strokeWidth="5"
         />
         <path

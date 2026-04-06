@@ -32,7 +32,7 @@ const ProgrammingIcon = forwardRef<SVGSVGElement, ShapeProps>(
         />
         <path
           d="M76.2083 34.4167L80.7311 38.315C82.6324 39.954 83.5833 40.7734 83.5833 41.7917C83.5833 42.81 82.6324 43.6294 80.7311 45.2683L76.2083 49.1667"
-          stroke="currentColor"
+          stroke="var(--color-primary)"
           strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"

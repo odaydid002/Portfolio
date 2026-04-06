@@ -20,7 +20,7 @@ const Shape1 = forwardRef<SVGSVGElement, { className?: string }>(
       />
       <path
         d="M90.6198 71.3643L36.6644 100.854L38.1032 39.3818L90.6198 71.3643Z"
-        stroke="#E7E7E7"
+        stroke="var(--color-primary)"
         strokeLinejoin="round"
       />
     </svg>

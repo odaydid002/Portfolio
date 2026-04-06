@@ -21,7 +21,7 @@ const DatabaseIcon = forwardRef<SVGSVGElement, ShapeProps>(
         />
         <path
           d="M34.4166 53.3055C37.3744 54.1944 40.6821 54.927 44.25 55.4684"
-          stroke="currentColor"
+          stroke="var(--color-primary)"
           strokeWidth="4"
           strokeLinecap="round"
         />
@@ -32,7 +32,7 @@ const DatabaseIcon = forwardRef<SVGSVGElement, ShapeProps>(
         />
         <path
           d="M34.4166 87.7222C37.3744 88.6111 40.6821 89.3437 44.25 89.885"
-          stroke="currentColor"
+          stroke="var(--color-primary)"
           strokeWidth="4"
           strokeLinecap="round"
         />

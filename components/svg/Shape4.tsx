@@ -22,7 +22,7 @@ const Shape4 = forwardRef<SVGSVGElement, { className?: string }>(
         cx="31"
         cy="40"
         r="19.5"
-        stroke="currentColor"
+        stroke="var(--color-primary)"
       />
     </svg>
   )

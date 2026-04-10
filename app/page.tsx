@@ -383,7 +383,7 @@ export default function Home() {
       <DebugIcon ref={shape12} className="absolute top-50 lg:top-none z-99 w-8 lg:w-10 lg:left-30 left-5"/>
       <CodeIcon ref={shape13} className="absolute top-50 lg:top-none z-99 w-8 lg:w-10 lg:right-10"/>
       
-      <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full hidden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
+      <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full   dden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
         &#8686;
       </button>
       <div className="flex relative flex-row items-center justify-center w-full flex-wrap z-10 overflow-hidden" ref={sec1}>

@@ -25,9 +25,9 @@ const Navbar = () => {
             </ul>
           </Glass>
         </div>
-        <button className='hidden4phone flex flex-row items-center justify-center gap-2 py-2 px-10 border-2 rounded-lg cursor-pointer'>
-            <p className='text-sm font-bold'>Hire me</p> 
-        </button>
+        <a href="/assets/CV_en.pdf" download className='hidden4phone flex flex-row items-center justify-center gap-2 py-2 px-10 border-2 rounded-lg cursor-pointer'>
+            <p className='text-sm font-bold'>Download CV</p> 
+        </a>
         <Image className="hidden4pc" src={menu} alt="menu-icon" />
     </div>
   )

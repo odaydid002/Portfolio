@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Glass from "@/components/container/Glass";
+import { Providers } from "@/components/container/Providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,10 +38,12 @@ export default function RootLayout({
       className={`${poppins.className} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col relative items-center overflow-x-hidden">
-        <Navbar />
-        {children}
-        <Footer />
+      <body className="ease-in-out transition-all duration-500 min-h-full flex flex-col relative items-center overflow-x-hidden">
+        <Providers>
+          <Navbar />
+            {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

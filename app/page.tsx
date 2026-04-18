@@ -383,7 +383,7 @@ export default function Home() {
       <DebugIcon ref={shape12} className="absolute top-50 lg:top-none z-99 w-8 lg:w-10 lg:left-30 left-5"/>
       <CodeIcon ref={shape13} className="absolute top-50 lg:top-none z-99 w-8 lg:w-10 lg:right-10"/>
       
-      <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 w-10 h-10 rounded-full   dden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
+        <button onClick={scrollUp} className="fixed z-99 bottom-8 right-8 bg-gray-600/20 dark:bg-gray-400/20 w-10 h-10 rounded-full   dden4phone flex items-center justify-center cursor-pointer opacity-20 hover:opacity-70 duration-500 ease-in-out">
         &#8686;
       </button>
       <div className="flex relative flex-row items-center justify-center w-full flex-wrap z-10 overflow-hidden" ref={sec1}>
@@ -458,7 +458,7 @@ export default function Home() {
         <TerminalIcon ref={shape14} className="absolute z-99 w-5 lg:w-10 lg:right-10 right-0 top-5 -rotate-12"/>
         <TreeIcon ref={shape15} className="absolute z-99 w-5 lg:w-10 lg:left-10 left-0 bottom-15 rotate-12"/>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full gap-8 lg:gap-0 mb-4 mt-10 lg:mt-50 lg:px-20 px-8 h-60 lg:h-100 relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg" ref={sec5}>
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full gap-8 lg:gap-0 mb-4 mt-10 lg:mt-50 lg:px-20 px-8 h-60 lg:h-100 relative bg-white/10 dark:bg-gray-900/10 backdrop-blur-md rounded-2xl border border-white/30 dark:border-gray-700/30 shadow-lg" ref={sec5}>
           <h1 className="lg:text-5xl text-xl font-extrabold flex flex-col">
             <span>Contact me for the service</span>
             <span>you want to use</span>

@@ -3,6 +3,7 @@ import facebook from "@/assets/facebook.svg";
 import instagram from "@/assets/instagram.svg";
 import telegram from "@/assets/telegram.svg";
 import linkedin from "@/assets/linkedin.svg";
+//import github from "@/assets/github.svg";
 import menu from "@/assets/menu.svg";
 import play from "@/assets/play.svg";
 import dev from "@/assets/dev.svg";
@@ -15,6 +16,7 @@ import server from "@/assets/server.svg";
 
 export { 
     Tie,
+    //github,
     facebook,
     instagram,
     telegram,

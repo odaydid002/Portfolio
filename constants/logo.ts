@@ -13,10 +13,38 @@ import align from "@/assets/align.svg";
 import camera from "@/assets/camera.svg";
 import video from "@/assets/video.svg";
 import server from "@/assets/server.svg";
+import copy from "@/assets/copy.svg";
+
+import react from "@/assets/icons/react.svg";
+import angular from "@/assets/icons/angular.svg";
+import html from "@/assets/icons/html.svg";
+import css from "@/assets/icons/css.svg";
+import node from "@/assets/icons/node.svg";
+import mysql from "@/assets/icons/mysql.svg";
+import postgresql from "@/assets/icons/postgresql.svg";
+import vue from "@/assets/icons/vue.svg";
+import python from "@/assets/icons/python.svg";
+import mongo from "@/assets/icons/mongo.svg";
+import laravel from "@/assets/icons/laravel.svg";
+import next from "@/assets/icons/next.svg";
+import tailwind from "@/assets/icons/tailwind.svg";
+import graphql from "@/assets/icons/graphql.svg";
+import java from "@/assets/icons/java.svg";
+import flutter from "@/assets/icons/flutter.svg";
+import typescript from "@/assets/icons/typescript.svg";
+import js from "@/assets/icons/js.svg";
+import flask from "@/assets/icons/flask.svg";
+import redis from "@/assets/icons/redis.svg";
+import gsap from "@/assets/icons/gsap.svg";
+import threejs from "@/assets/icons/threejs.svg";
+import docker from "@/assets/icons/docker.svg";
+
+
 
 export { 
     Tie,
     //github,
+    copy,
     facebook,
     instagram,
     telegram,
@@ -29,5 +57,28 @@ export {
     align,
     camera,
     video,
-    server
+    server,
+    react,
+    angular,
+    html,
+    css,
+    node,
+    mysql,
+    postgresql,
+    vue,
+    python,
+    mongo,
+    laravel,
+    next,
+    tailwind,
+    graphql,
+    java,
+    flutter,
+    typescript,
+    js,
+    flask,
+    redis,
+    gsap,
+    threejs,
+    docker
 };

@@ -52,7 +52,7 @@ const Navbar = () => {
             <ul className={`hidden4phone flex items-center justify-center gap-8 font-extralight ${styles.navList}`}>
                 <li onClick={()=>{setCurrentPage("home")}} className={currentPage == "home"?styles.navSelected:""}><Link href="/">Home</Link></li>
                 <li onClick={()=>{setCurrentPage("Career")}} className={currentPage == "Career"?styles.navSelected:""}><Link href="/">Career</Link></li>
-                <li onClick={()=>{setCurrentPage("projects")}} className={currentPage == "projects"?styles.navSelected:""}><Link href="/">Projects</Link></li>
+                <li onClick={()=>{setCurrentPage("projects")}} className={currentPage == "projects"?styles.navSelected:""}><Link href="/projects">Projects</Link></li>
                 <li onClick={()=>{setCurrentPage("contact")}} className={currentPage == "contact"?styles.navSelected:""}><Link href="/">Contact</Link></li>
             </ul>
           </Glass>

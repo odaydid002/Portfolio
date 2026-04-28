@@ -89,3 +89,7 @@ body {
     background-color: var(--color-primary);
     border-radius: 5px;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+    width: 0px;
+}

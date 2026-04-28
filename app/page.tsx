@@ -387,14 +387,14 @@ export default function Home() {
         &#8686;
       </button>
       <div className="flex relative flex-row items-center justify-center w-full flex-wrap z-10 overflow-hidden" ref={sec1}>
-        <div className="flex-1 flex flex-col h-dvh pt-20 lg:pt-30 lg:max-w-3/6 ">
-          <h1 className=" font-extrabold text-4xl lg:text-6xl flex flex-col gap-2">
+        <div className="flex-1 flex flex-col h-dvh pt-20 lg:pt-30 lg:max-w-3/6 text-center lg:text-left">
+          <h1 className=" font-extrabold text-5xl lg:text-6xl flex flex-col gap-2">
             <span ref={title1}>FULL</span>
             <span ref={title2}>STACK</span>
             <span ref={title3}>CODER</span>
           </h1>
           <p className="mt-10 pr-4 pt-4 lg:max-w-4/6 lg:pt-0 text-md opacity-70" ref={para1}>A Full-Stack Software Engineer and UI/UX Designer, creating modern, user-friendly web and mobile applications that are both functional and visually appealing. I turn ideas into seamless digital experiences from concept to deployment.</p>
-          <button ref={button1} className="mt-10 bg-primary hover:opacity-80 cursor-pointer text-white text-sm rounded-lg px-8 py-2 font-semibold max-w-fit">
+          <button ref={button1} className="mt-10 bg-primary hover:opacity-80 cursor-pointer text-white text-sm rounded-lg px-8 py-2 font-semibold max-w-fit self-center lg:self-auto">
             My Work
             <span className="font-bold pl-2">
               &#8599;

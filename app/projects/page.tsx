@@ -48,7 +48,7 @@ const Projects = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 3,
+      duration: 2,
       easing: (t) => 1 - Math.pow(1 - t, 3),
     });
 

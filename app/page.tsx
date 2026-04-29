@@ -13,7 +13,7 @@ import Shape3 from "@/components/svg/Shape3";
 import Shape4 from "@/components/svg/Shape4";
 import Shape5 from "@/components/svg/Shape5";
 import Image from "next/image";
-import { oday, oday2, showcase1, showcase2, showcase3 } from "@/constants/images";
+import { image1, oday, oday2, showcase1, showcase2, showcase3 } from "@/constants/images";
 import VideoPlayer from "@/components/VideoPlayer";
 import { welcomeVid } from "@/constants/videos";
 import ServiceContainer from "@/components/ServiceContainer";
@@ -30,6 +30,7 @@ import CodeIcon from "@/components/svg/CodeIcon";
 import TerminalIcon from "@/components/svg/TerminalIcon";
 import TreeIcon from "@/components/svg/TreeIcon";
 import Lenis from '@studio-freight/lenis'
+import Project from "@/components/container/Project";
 
 const getPageHeight = (): number => {
   return Math.max(
@@ -472,9 +473,33 @@ export default function Home() {
       <div className="flex flex-col w-full mt-25 mb-4 relative" ref={sec4}>
         <h1 className="font-extrabold text-2xl lg:text-3xl" ref={title8}>My Creative Showcase</h1>
         <div className="flex flex-row justify-center gap-4 lg:gap-8 w-full flex-wrap lg:mt-15">
-            <Showcase className="h-fit rounded-2xl" image={showcase1} ref={container7}/>
-            <Showcase className="h-fit lg:mt-20 rounded-2xl" image={showcase2} ref={container8}/>
-            <Showcase className="h-fit lg:mt-40 rounded-2xl" image={showcase3} ref={container9}/>
+            <Project 
+              ref={container7}
+            className='child'
+            title='Unitime - Exam Management System'
+            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
+            imageSrc={image1}
+            stack={["react", "tailwind", "laravel", "gsap"]}
+            link='https://exam-managment-project.vercel.app/'
+          />
+          <Project
+            ref={container8}
+            className='child'
+            title='Unitime - Exam Management System'
+            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
+            imageSrc={image1}
+            stack={["react", "tailwind", "laravel", "gsap"]}
+            link='https://exam-managment-project.vercel.app/'
+          />
+          <Project 
+            ref={container9}
+            className='child'
+            title='Unitime - Exam Management System'
+            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
+            imageSrc={image1}
+            stack={["react", "tailwind", "laravel", "gsap"]}
+            link='https://exam-managment-project.vercel.app/'
+          />
         </div>
         <TerminalIcon ref={shape14} className="absolute z-99 w-5 lg:w-10 lg:right-10 right-0 top-5 -rotate-12"/>
         <TreeIcon ref={shape15} className="absolute z-99 w-5 lg:w-10 lg:left-10 left-0 bottom-15 rotate-12"/>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@studio-freight/lenis": "^1.0.42",
     "@svgr/webpack": "^8.1.0",
     "babel-plugin-react-compiler": "^1.0.0",
     "gsap": "^3.14.2",

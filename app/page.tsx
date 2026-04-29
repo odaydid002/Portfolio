@@ -29,6 +29,7 @@ import DebugIcon from "@/components/svg/DebugIcon";
 import CodeIcon from "@/components/svg/CodeIcon";
 import TerminalIcon from "@/components/svg/TerminalIcon";
 import TreeIcon from "@/components/svg/TreeIcon";
+import Lenis from '@studio-freight/lenis'
 
 const getPageHeight = (): number => {
   return Math.max(
@@ -80,6 +81,26 @@ export default function Home() {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+    });
+
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove((time) => {
+        lenis.raf(time * 1000);
+      });
+      lenis.destroy();
+    };
   }, []);
 
   const sec1 = useRef(null);

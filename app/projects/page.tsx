@@ -9,16 +9,18 @@ import { useEffect, useRef, useState } from 'react';
 import Skill from '@/components/container/Skill';
 import { copy } from '@/constants/logo';
 import Project from '@/components/container/Project';
+import Lenis from '@studio-freight/lenis';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-
   const [isMore, setIsMore] = useState(false);
 
   const doc = useRef(null);
   const sec1 = useRef(null);
   const sec2 = useRef(null);
   const sec3 = useRef(null);
+  const sec4 = useRef<HTMLDivElement>(null);
 
   const gridbg = useRef(null);
   const spotlightsL = useRef(null);
@@ -41,12 +43,34 @@ const Projects = () => {
 
   const sk1 = useRef<HTMLDivElement | null>(null);
   const sk2 = useRef<HTMLDivElement | null>(null);
+  
+  const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 3,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+    });
+
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove((time) => {
+        lenis.raf(time * 1000);
+      });
+      lenis.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     if (!sk1.current) return;
 
     gsap.to(sk1.current, {
-      scrollTop: sk1.current.scrollHeight,
+      scrollTop: sk1.current.scrollHeight - 200,
       ease: "none",
       scrollTrigger: {
         trigger: sk1.current,
@@ -63,7 +87,7 @@ const Projects = () => {
     gsap.fromTo(
       sk2.current,
       {
-        scrollTop: sk2.current.scrollHeight,
+        scrollTop: sk2.current.scrollHeight - 200,
       },
       {
         scrollTop: 0,
@@ -104,7 +128,7 @@ const Projects = () => {
           trigger: sec1.current,
         },
       }),
-      gsap.set([para1.current, title1.current, title2.current, para2.current], {y: 50, opacity: 0})
+      gsap.set([para1.current, title1.current, title2.current, para2.current], {y: -100, opacity: 0})
       gsap.from([para1.current, title1.current, title2.current, para2.current], {
         opacity: 1,
         y: 0,
@@ -124,13 +148,32 @@ const Projects = () => {
         stagger: 0.1,
         scrollTrigger: {
           start: "bottom center",
-          scrub: 3,
           trigger: sec1.current,
         },
       })
     });
     return () => ctx.revert();
   }, [])
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set(".child", { y: 50, opacity: 0 });
+
+      gsap.to(".child", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: sec3.current,
+          start: "top 60%",
+        },
+      });
+    }, container);
+
+    return () => ctx.revert();
+  }, []);
+  
 
   return (
     <div className='flex-1 w-full relative' ref={doc}>
@@ -256,8 +299,41 @@ const Projects = () => {
       </div>
       <div className="w-full py-8" ref={sec3}>
         <h1 className='text-3xl font-black text-center w-full mb-8'>Recent projects <span className='text-primary'>showcase</span></h1>
-        <div className="w-full flex flex-row justify-center flex-wrap gap-8 py-8">
+        <div className="w-full flex flex-row justify-center flex-wrap gap-8 py-8" ref={container}>
           <Project 
+            className='child'
+            title='Unitime - Exam Management System'
+            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
+            imageSrc={image1}
+            stack={["react", "tailwind", "laravel", "gsap"]}
+            link='https://exam-managment-project.vercel.app/'
+          />
+          <Project 
+            className='child'
+            title='Unitime - Exam Management System'
+            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
+            imageSrc={image1}
+            stack={["react", "tailwind", "laravel", "gsap"]}
+            link='https://exam-managment-project.vercel.app/'
+          />
+          <Project 
+            className='child'
+            title='Unitime - Exam Management System'
+            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
+            imageSrc={image1}
+            stack={["react", "tailwind", "laravel", "gsap"]}
+            link='https://exam-managment-project.vercel.app/'
+          />
+          <Project 
+            className='child'
+            title='Unitime - Exam Management System'
+            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
+            imageSrc={image1}
+            stack={["react", "tailwind", "laravel", "gsap"]}
+            link='https://exam-managment-project.vercel.app/'
+          />
+          <Project 
+            className='child'
             title='Unitime - Exam Management System'
             description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
             imageSrc={image1}
@@ -267,6 +343,7 @@ const Projects = () => {
         </div>
         <h2 className={`${isMore?"opacity-100 cursor-pointer":"opacity-20 cursor-default"} text-[0.8rem] text-primary w-full text-center hover:opacity-20`}>Show More</h2>
       </div>
+      <div ref={sec4}></div>
     </div>
   )
 }

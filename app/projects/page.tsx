@@ -5,13 +5,15 @@ import Image from 'next/image'
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Skill from '@/components/container/Skill';
 import { copy } from '@/constants/logo';
 import Project from '@/components/container/Project';
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+
+  const [isMore, setIsMore] = useState(false);
 
   const doc = useRef(null);
   const sec1 = useRef(null);
@@ -161,7 +163,7 @@ const Projects = () => {
             <Image src={arbty} alt='section' className='absolute z-1 bottom-5 right-5'/>
             <Image src={mockup} alt='section' className='absolute z-0'/>
             <div className="absolute lg:bottom-10 lg:left-10 bottom-5 left-5">
-              <h3 className='text-[0.9rem] lg:text-lg flex flex-col font-bold'>
+              <h3 className='text-[0.9rem] lg:text-lg flex flex-col font-bold text-white'>
                 <span>I prioritize client</span>
                 <span>collaboration, fostering</span>
                 <span>open communication</span>
@@ -169,17 +171,17 @@ const Projects = () => {
             </div>
           </div>
           <div className='flex flex-wrap flex-row lg:grid lg:grid-cols-1 lg:grid-rows-2 gap-4'>
-            <div className='border-2 border-gray-500/10 rounded-lg flex-1 min-w-[200px] min-h-[114px] relative overflow-hidden' ref={ct2}>
+            <div className='dark:bg-transparent bg-gray-800 border-2 border-gray-500/10 rounded-lg flex-1 min-w-[200px] min-h-[114px] relative overflow-hidden' ref={ct2}>
               <Image src={pagination} alt='Word Map' className='absolute z-0 bottom-0'/>
               <div className="absolute bg-secondary rounded-full w-30 h-30 -top-5 -left-1/12 rotate-45 blur-2xl opacity-20 z-0"></div>
               <div className="absolute top-5 left-5 lg:left-10">
-                <h3 className='text-sm lg:text-lg flex flex-col font-bold'>
+                <h3 className='text-sm lg:text-lg flex flex-col font-bold text-white'>
                   <span>I’m very flexible with time</span>
                   <span>zone communications</span>
                 </h3>
               </div>
             </div>
-            <div className='border-2 border-gray-500/10 rounded-lg bg-gray-500/10 flex-1 min-w-[200px] min-h-[114px] lg:max-h-fit max-h-[120px] overflow-hidden flex flex-row gap-4 relative pr-4' ref={ct3}>
+            <div className='border-2 bg-gray-700/50 border-gray-500/10 rounded-lg dark:bg-gray-500/10 flex-1 min-w-[200px] min-h-[114px] lg:max-h-fit max-h-[120px] overflow-hidden flex flex-row gap-4 relative pr-4' ref={ct3}>
               <div className="absolute bg-black rounded-full w-30 h-30 top-0 right-1/12 rotate-45 blur-2xl opacity-50 z-0"></div>
               <div className="w-[32%]">
               </div>
@@ -212,21 +214,21 @@ const Projects = () => {
         </div>
         <div className='flex flex-col lg:grid lg:grid-cols-[0.5fr_1fr] lg:grid-rows-1 gap-4 w-full'>
           <div className='flex flex-wrap flex-row lg:grid lg:grid-cols-1 lg:grid-rows-2 gap-4'>
-            <div className="border-2 border-gray-300/10 rounded-lg bg-gray-600/10 flex-1 min-w-[200px] min-h-[114px] relative overflow-hidden" ref={ct4}>
+            <div className="border-2 border-gray-300/10 rounded-lg bg-gray-800 dark:bg-gray-600/10 flex-1 min-w-[200px] min-h-[114px] relative overflow-hidden" ref={ct4}>
               <Image src={grid} alt='section' className='absolute z-0'/>
               <Image src={section} alt='section' className='absolute z-10 lg:right-5 lg:-bottom-1/4 -bottom-3/4 right-0'/>
               <div className="absolute bg-primary rounded-full w-30 h-30 -top-5 right-1/12 rotate-45 blur-2xl opacity-20 z-0"></div>
               <div className="absolute top-5 left-5 lg:left-10">
-                <h3 className='text-sm lg:text-lg flex flex-col font-bold'>
+                <h3 className='text-sm lg:text-lg flex flex-col font-bold text-white'>
                   <span>Tech enthusiast with a</span>
                   <span>passion for development.</span>
                 </h3>
               </div>
             </div>
-            <div className="border-2 border-gray-500/10 rounded-lg flex-1 min-w-[200px] min-h-[114px] relative bg-linear-to-tr from-primary/20 to-black/15 overflow-hidden" ref={ct5}>
+            <div className="border-2 border-gray-500/10 rounded-lg flex-1 min-w-[200px] min-h-[114px] relative bg-linear-to-tr from-gray-800 to-primary dark:from-primary/20 dark:to-black/15 overflow-hidden" ref={ct5}>
               <Image src={grid} alt='section' className='absolute z-0'/>
               <div className="absolute bg-primary rounded-full w-30 h-30 top-1/2 left-1/12 rotate-45 blur-2xl opacity-50 z-10"></div>
-              <div className="flex flex-col absolute top-2/12 lg:top-3/12 z-10 w-full text-center">
+              <div className="flex flex-col absolute top-2/12 lg:top-3/12 z-10 w-full text-center text-white">
                 <h3 className='text-[0.8rem] lg:text-lg font-bold flex flex-col'>
                   <span>Do you want to start</span>
                   <span>a project together?</span>
@@ -238,12 +240,12 @@ const Projects = () => {
               </div>
             </div>
           </div> 
-          <div className="border-2 border-gray-500/10 rounded-lg min-w-[260px] min-h-[260px] relative overflow-hidden" ref={ct6}>
+          <div className="bg-gray-900 dark:bg-transparent border-2 border-gray-500/10 rounded-lg min-w-[260px] min-h-[260px] relative overflow-hidden" ref={ct6}>
             <Image src={grid} alt='section' className='absolute z-0 -top-10'/>
             <Image src={vscode} alt='snapshot' className='absolute z-0 opacity-40 w-150 -right-1/4 top-2/12'/>
             <div className="flex flex-col absolute left-4 top-1/2 -translate-y-1/2 z-10">
-              <p className='text-[0.6rem] lg:text-md opacity-50'>The Inside Scoop</p>
-              <h3 className='text-lg lg:text-3xl font-bold flex flex-col'>
+              <p className='text-[0.6rem] lg:text-md opacity-50 text-white'>The Inside Scoop</p>
+              <h3 className='text-lg lg:text-3xl font-bold flex flex-col text-white'>
                 <span>Focused on writing</span>
                 <span>clean, well-structured</span>
                 <span>code.</span>
@@ -256,30 +258,14 @@ const Projects = () => {
         <h1 className='text-3xl font-black text-center w-full mb-8'>Recent projects <span className='text-primary'>showcase</span></h1>
         <div className="w-full flex flex-row justify-center flex-wrap gap-8 py-8">
           <Project 
-            title='3D Solar System Planets to Explore'
-            description='Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.'
+            title='Unitime - Exam Management System'
+            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
             imageSrc={image1}
-            stack={["next", "tailwind", "typescript", "threejs"]}
-          />
-          <Project 
-            title='Yoom - Video Conferencing App'
-            description='Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.'
-            imageSrc={image2}
-            stack={["next", "tailwind", "typescript"]}
-          />
-          <Project 
-            title='AI Image SaaS - Canva Application'
-            description='A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.'
-            imageSrc={image3}
-            stack={["react", "tailwind", "typescript", "threejs"]}
-          />
-          <Project 
-            title='Animated Apple Iphone 3D Website'
-            description='Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.'
-            imageSrc={image4}
-            stack={["next", "tailwind", "typescript", "threejs", "gsap"]}
+            stack={["react", "tailwind", "laravel", "gsap"]}
+            link='https://exam-managment-project.vercel.app/'
           />
         </div>
+        <h2 className={`${isMore?"opacity-100 cursor-pointer":"opacity-20 cursor-default"} text-[0.8rem] text-primary w-full text-center hover:opacity-20`}>Show More</h2>
       </div>
     </div>
   )

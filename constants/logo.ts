@@ -38,6 +38,8 @@ import redis from "@/assets/icons/redis.svg";
 import gsap from "@/assets/icons/gsap.svg";
 import threejs from "@/assets/icons/threejs.svg";
 import docker from "@/assets/icons/docker.svg";
+import android from "@/assets/icons/android.svg";
+import ios from "@/assets/icons/ios.svg";
 
 
 
@@ -80,5 +82,7 @@ export {
     redis,
     gsap,
     threejs,
+    android,
+    ios,
     docker
 };

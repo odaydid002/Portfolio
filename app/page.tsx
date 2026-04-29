@@ -13,7 +13,7 @@ import Shape3 from "@/components/svg/Shape3";
 import Shape4 from "@/components/svg/Shape4";
 import Shape5 from "@/components/svg/Shape5";
 import Image from "next/image";
-import { image1, oday, oday2, showcase1, showcase2, showcase3 } from "@/constants/images";
+import { image1, image2, image3, oday, oday2, showcase1, showcase2, showcase3 } from "@/constants/images";
 import VideoPlayer from "@/components/VideoPlayer";
 import { welcomeVid } from "@/constants/videos";
 import ServiceContainer from "@/components/ServiceContainer";
@@ -31,6 +31,7 @@ import TerminalIcon from "@/components/svg/TerminalIcon";
 import TreeIcon from "@/components/svg/TreeIcon";
 import Lenis from '@studio-freight/lenis'
 import Project from "@/components/container/Project";
+import Link from "next/link";
 
 const getPageHeight = (): number => {
   return Math.max(
@@ -86,7 +87,7 @@ export default function Home() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.5,
       easing: (t) => 1 - Math.pow(1 - t, 3),
     });
 
@@ -298,9 +299,9 @@ export default function Home() {
         },
       }),
       /*-----*/
-      gsap.set(title8.current, {x: 0, opacity: 1})
+      gsap.set(title8.current, {y: 0, opacity: 1})
       gsap.from(title8.current, {
-        x: -100,
+        y: 50,
         opacity: 0,
         duration: 0.5,
         stagger: 0.1,
@@ -317,9 +318,9 @@ export default function Home() {
         duration: 1,
         stagger: 0.1,
         scrollTrigger: {
-          start: "top bottom",
+          start: "top center",
           scrub: 3,
-          trigger: sec4.current,
+          trigger: sec3.current,
         },
       }),
       /*-----*/
@@ -412,8 +413,8 @@ export default function Home() {
         <div className="flex-1 flex flex-col h-dvh pt-20 lg:pt-30 lg:max-w-3/6 text-center lg:text-left">
           <h1 className=" font-extrabold text-5xl lg:text-6xl flex flex-col gap-2">
             <span ref={title1}>FULL</span>
-            <span ref={title2}>STACK</span>
-            <span ref={title3}>CODER</span>
+            <span ref={title2}>STA<span className="text-secondary">C</span>K</span>
+            <span ref={title3}><span>C</span><span className="text-primary">O</span>DER</span>
           </h1>
           <p className="mt-10 pr-4 pt-4 lg:max-w-4/6 lg:pt-0 text-md opacity-70" ref={para1}>A Full-Stack Software Engineer and UI/UX Designer, creating modern, user-friendly web and mobile applications that are both functional and visually appealing. I turn ideas into seamless digital experiences from concept to deployment.</p>
           <button ref={button1} className="mt-10 bg-primary hover:opacity-80 cursor-pointer text-white text-sm rounded-lg px-8 py-2 font-semibold max-w-fit self-center lg:self-auto">
@@ -471,36 +472,39 @@ export default function Home() {
         <Shape5 ref={shape9} className="z-50 absolute bottom-50 lg:-bottom-10 left-0 lg:left-60 w-10 h-auto -rotate-12"/>
       </div>
       <div className="flex flex-col w-full mt-25 mb-4 relative" ref={sec4}>
-        <h1 className="font-extrabold text-2xl lg:text-3xl" ref={title8}>My Creative Showcase</h1>
+        <h1 className="font-extrabold text-2xl lg:text-3xl text-center w-full" ref={title8}>My Creative <span className="text-primary">Showcase</span></h1>
         <div className="flex flex-row justify-center gap-4 lg:gap-8 w-full flex-wrap lg:mt-15">
-            <Project 
-              ref={container7}
-            className='child'
+          <Project 
+            ref={container7}
             title='Unitime - Exam Management System'
             description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
             imageSrc={image1}
-            stack={["react", "tailwind", "laravel", "gsap"]}
+            stack={["react", "tailwind", "laravel", "gsap", "mysql"]}
             link='https://exam-managment-project.vercel.app/'
+            github="https://github.com/odaydid002/Exam-Managment-Project"
+            figma="https://www.figma.com/design/7GtBgiKFH4qe1hxJSpFcDE/Exam-managment?node-id=0-1&t=JQa3VzOSl6pilIOu-1"
           />
           <Project
             ref={container8}
-            className='child'
-            title='Unitime - Exam Management System'
-            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
-            imageSrc={image1}
-            stack={["react", "tailwind", "laravel", "gsap"]}
-            link='https://exam-managment-project.vercel.app/'
+            title='DZRents - Car Rental Management System'
+            description='A full‑stack Car Rental Management System built using Node.js (Express) and PostgreSQL. It enables administrators and clients to manage vehicles, rentals.'
+            imageSrc={image2}
+            stack={["html", "css", "gsap", "node", "postgresql"]}
+            github="https://github.com/SDIKI20/PFE"
           />
-          <Project 
+          <Project
             ref={container9}
-            className='child'
-            title='Unitime - Exam Management System'
-            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
-            imageSrc={image1}
-            stack={["react", "tailwind", "laravel", "gsap"]}
-            link='https://exam-managment-project.vercel.app/'
+            title='Ajourne - GPA / Academic Calculator App'
+            description='Ajourne is a full-stack application designed to manage academic records such as absences, delays, or student-related data. It consists of a React Native mobile app, a Node.js backend, and a PostgreSQL database, providing a complete and scalable solution.'
+            imageSrc={image3}
+            stack={["react", "typescript", "node", "postgresql", "android", "ios"]}
+            github="https://github.com/odaydid002/Ajourne"
+            figma='https://www.figma.com/design/3t9ActMpDE3kVYF1fMQZlz/Ajourne?node-id=0-1&t=qMCPTn4nJzSKcp6v-1'
           />
         </div>
+        <Link href="/projects">
+          <h1 className="font-bold text-sm text-center w-full mt-10 text-primary hover:opacity-60 cursor-pointer">Show More</h1>
+        </Link>
         <TerminalIcon ref={shape14} className="absolute z-99 w-5 lg:w-10 lg:right-10 right-0 top-5 -rotate-12"/>
         <TreeIcon ref={shape15} className="absolute z-99 w-5 lg:w-10 lg:left-10 left-0 bottom-15 rotate-12"/>
       </div>

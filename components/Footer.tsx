@@ -9,10 +9,10 @@ import LogoGithub from './svg/logo/LogoGithub'
 
 const Footer = () => {
   return (
-    <div className="flex flex-row items-center justify-between py-2 px-4 w-full z-50 mt-8 bg-background hidden4phone">
+    <div className="flex flex-row items-center justify-between py-2 px-4 w-full z-50 mt-8 bg-background">
         {/*
         */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 hidden4phone">
           <Image src={logo} alt='logo' width={35}/>
           <h1 className='cursor-default'><span className='text-md font-extrabold'>ODAY-DEV</span><span className='text-sm'>.app</span></h1>
         </div>

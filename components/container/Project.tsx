@@ -3,11 +3,16 @@ import Image from "next/image"
 import { forwardRef } from "react";
 import { ReactElement } from "react"
 
-import {react, angular, html, css, node, mysql, postgresql, vue, python, mongo, laravel, next, tailwind, graphql, java, flutter, typescript, js, flask, redis, gsap, threejs, docker} from '@/constants/logo'
+import {react, angular, html, css, node, mysql, postgresql, vue, python, mongo, laravel, next, tailwind, graphql, java, flutter, typescript, js, flask, redis, gsap, threejs, docker, ios, android} from '@/constants/logo'
+import LogoGithub from "../svg/logo/LogoGithub";
+import LogoFacebook from "../svg/logo/LogoFacebook";
+import LogoFigma from "../svg/logo/LogoFigma";
 
 const prgIcons = {
     "react" : react,
     "angular" : angular,
+    "android" : android,
+    "ios" : ios,
     "html" : html,
     "css" : css,
     "node" : node,
@@ -37,6 +42,8 @@ interface projectPrps{
     title?: string;
     description?: string;
     link?: string;
+    github?: string;
+    figma?: string;
     imageSrc: string | StaticImport;
     className?: string;
     stack?: StackKey[];
@@ -44,25 +51,47 @@ interface projectPrps{
 }
 
 const Project = forwardRef<HTMLDivElement, projectPrps>(
-  ({ title= "", description="", link="", imageSrc="", stack=[], className="", onClick = ()=>{}}, ref) => {
+  ({ title= "", description="", link, github, figma, imageSrc="", stack=[], className="", onClick = ()=>{}}, ref) => {
     return (
-        <div className={`${className} p-4 flex flex-col gap-4 border-2 border-gray-500/10 rounded-3xl dark:bg-gray-500/10 bg-gray-900 w-3/12 min-w-[300px]`} ref={ref}>
-            <div className="lg:h-[200px] h-[150px] overflow-hidden rounded-lg bg-linear-to-tr from-secondary/20 to-gray-900/50 dark:from-secondary/20 dark:to-black/15 relative">
+        <div className={`${className} p-4 flex flex-col gap-4 border-2 border-gray-500/10 rounded-3xl dark:bg-gray-500/10 bg-black w-1/4 min-w-[300px] relative`} ref={ref}>
+            <div className="lg:h-[190px] h-[150px] overflow-hidden rounded-lg bg-linear-to-tr from-secondary/10 to-primary/10 relative">
                 <Image src={imageSrc} alt="Project Image" className="w-4/5 absolute bottom-0 left-1/2 -translate-x-1/2"/>
             </div>
+            <div className="w-full flex flex-row gap-4 text-white">
+                {
+                    figma && (
+                        <a className="cursor-pointer hover:opacity-70 opacity-100 flex flex-row items-center gap-2" href={figma} target="_blank" title="Figma Design Link">
+                            <LogoFigma className="w-4"/>
+                            <h3 className="text-[0.7rem]">Figma</h3>
+                        </a>
+                    )
+                }
+                {
+                    github && (
+                        <a className="cursor-pointer hover:opacity-70 flex flex-row items-center gap-2" href={github} target="_blank" title="Figma Design Link">
+                            <LogoGithub className="w-4"/>
+                            <h3 className="text-[0.7rem]">Github</h3>
+                        </a>
+                    )
+                }
+            </div>
             <div className="flex flex-col w-full gap-2">
-                <h3 className="font-bold text-lg cursor-pointer hover:opacity-70 text-white" onClick={onClick}>{title}</h3>
+                <a className="font-bold text-lg cursor-pointer hover:opacity-70 text-white" onClick={onClick}>{title}</a>
                 <p className="text-[0.7rem] opacity-60 text-white">{description}</p>
             </div>
-            <div className="flex flex-row items-center justify-between">
+            <div className="flex flex-row items-center justify-between mt-auto">
                 <div className="flex flex-row -space-x-2.5">
                     {stack.map((icn, index) => (
-                        <div key={index} className="rounded-full flex items-center justify-center border-2 border-gray-500/10 w-8 h-8 bg-gray-800 dark:bg-[#0a0a0a]">
-                            <Image key={index} src={prgIcons[icn]} alt="Icon" className="w-1/2" />
+                        <div key={index} title={icn} className="rounded-full flex items-center justify-center border-2 border-gray-500/10 w-8 h-8 bg-gray-800 dark:bg-[#0a0a0a]">
+                            <Image key={index} src={prgIcons[icn]} alt="Icon" className="w-2/3" />
                         </div>
                     ))}
                 </div>
-                <a className="text-secondary text-sm font-light hover:opacity-80 cursor-pointer" href={link} target="_blank">Check Live Site &#8599;</a>
+                {
+                    link && (
+                        <a className="text-secondary text-sm font-light hover:opacity-80 cursor-pointer" href={link} target="_blank">Check Live Site &#8599;</a>
+                    )
+                }
             </div>
         </div>
     );

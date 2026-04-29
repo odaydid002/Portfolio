@@ -10,6 +10,8 @@ import Skill from '@/components/container/Skill';
 import { copy } from '@/constants/logo';
 import Project from '@/components/container/Project';
 import Lenis from '@studio-freight/lenis';
+import Link from 'next/link';
+import LogoGithub from '@/components/svg/logo/LogoGithub';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,7 +50,7 @@ const Projects = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2,
+      duration: 1.5,
       easing: (t) => 1 - Math.pow(1 - t, 3),
     });
 
@@ -196,7 +198,10 @@ const Projects = () => {
             <span ref={title2}>Seamless <span className='text-primary'> User Experiences</span></span>
           </h3>
           <p className='text-[0.7rem] lg:text-[0.8rem] font-extralight opacity-60 max-w-3/4' ref={para2}>Hi! I&apos;m <strong>Oudai Oulhadj</strong>, a Fullstack Developer based in Algeria 🇩🇿</p>
-          <button ref={bt1} className='text-sm lg:text-[1rem] px-10 py-2 dark:bg-gray-700/10 bg-gray-800/15 rounded-xl cursor-pointer active:scale-95 hover:opacity-60 ease-in-out duration-500'>See my work &#8599;</button>
+          <Link ref={bt1} target='_blank' href="https://github.com/odaydid002" className='flex flex-row gap-4 text-sm lg:text-[1rem] px-5 py-2 dark:bg-gray-700/10 bg-gray-800/15 rounded-xl cursor-pointer active:scale-95 hover:opacity-60 ease-in-out duration-500'>
+            <LogoGithub width={15}/>
+            Github Profile
+          </Link>
         </div>
       </div>
       <div className="lg:w-3/4 lg:px-0 px-8 mx-auto flex flex-wrap flex-row lg:grid lg:grid-cols-1 lg:grid-rows-2 gap-4 py-8" ref={sec2}>
@@ -299,46 +304,33 @@ const Projects = () => {
       </div>
       <div className="w-full py-8" ref={sec3}>
         <h1 className='text-3xl font-black text-center w-full mb-8'>Recent projects <span className='text-primary'>showcase</span></h1>
-        <div className="w-full flex flex-row justify-center flex-wrap gap-8 py-8" ref={container}>
+        <div className="w-full flex flex-row justify-center flex-wrap gap-8 py-8 lg:px-12" ref={container}>
           <Project 
             className='child'
             title='Unitime - Exam Management System'
             description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
             imageSrc={image1}
-            stack={["react", "tailwind", "laravel", "gsap"]}
+            stack={["react", "tailwind", "laravel", "gsap", "mysql"]}
             link='https://exam-managment-project.vercel.app/'
+            github="https://github.com/odaydid002/Exam-Managment-Project"
+            figma="https://www.figma.com/design/7GtBgiKFH4qe1hxJSpFcDE/Exam-managment?node-id=0-1&t=JQa3VzOSl6pilIOu-1"
           />
-          <Project 
+          <Project
             className='child'
-            title='Unitime - Exam Management System'
-            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
-            imageSrc={image1}
-            stack={["react", "tailwind", "laravel", "gsap"]}
-            link='https://exam-managment-project.vercel.app/'
+            title='DZRents - Car Rental Management System'
+            description='A full‑stack Car Rental Management System built using Node.js (Express) and PostgreSQL. It enables administrators and clients to manage vehicles, rentals.'
+            imageSrc={image2}
+            stack={["html", "css", "gsap", "node", "postgresql"]}
+            github="https://github.com/SDIKI20/PFE"
           />
-          <Project 
+          <Project
             className='child'
-            title='Unitime - Exam Management System'
-            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
-            imageSrc={image1}
-            stack={["react", "tailwind", "laravel", "gsap"]}
-            link='https://exam-managment-project.vercel.app/'
-          />
-          <Project 
-            className='child'
-            title='Unitime - Exam Management System'
-            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
-            imageSrc={image1}
-            stack={["react", "tailwind", "laravel", "gsap"]}
-            link='https://exam-managment-project.vercel.app/'
-          />
-          <Project 
-            className='child'
-            title='Unitime - Exam Management System'
-            description='A full-stack Laravel + React application for managing exams, students, teachers, and scheduling.'
-            imageSrc={image1}
-            stack={["react", "tailwind", "laravel", "gsap"]}
-            link='https://exam-managment-project.vercel.app/'
+            title='Ajourne - GPA / Academic Calculator App'
+            description='Ajourne is a full-stack application designed to manage academic records such as absences, delays, or student-related data. It consists of a React Native mobile app, a Node.js backend, and a PostgreSQL database, providing a complete and scalable solution.'
+            imageSrc={image3}
+            stack={["react", "typescript", "node", "postgresql", "android", "ios"]}
+            github="https://github.com/odaydid002/Ajourne"
+            figma='https://www.figma.com/design/3t9ActMpDE3kVYF1fMQZlz/Ajourne?node-id=0-1&t=qMCPTn4nJzSKcp6v-1'
           />
         </div>
         <h2 className={`${isMore?"opacity-100 cursor-pointer":"opacity-20 cursor-default"} text-[0.8rem] text-primary w-full text-center hover:opacity-20`}>Show More</h2>

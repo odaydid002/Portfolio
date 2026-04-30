@@ -513,9 +513,9 @@ export default function Home() {
             <span>Contact me for the service</span>
             <span>you want to use</span>
           </h1>
-          <button className="rounded-sm bg-primary text-white text-sm font-semibold px-8 h-10 hover:opacity-80 cursor-pointer duration-500 ease-in-out">
-            Contact Me
-          </button>
+          <Link href="/contact" className="flex items-center justify-center rounded-sm bg-primary text-white text-sm font-semibold px-8 h-10 hover:opacity-80 cursor-pointer duration-500 ease-in-out">
+           <h1>Contact Me</h1>
+          </Link>
           <Shape4 className="absolute lg:bottom-10 bottom-5 left-5 w-10 h-auto"/>
           <Shape5 className="absolute top-5 lg:top-10 right-5 lg:right-10 w-5 lg:w-10 h-auto rotate-12"/>
       </div>

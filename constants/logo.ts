@@ -5,6 +5,7 @@ import telegram from "@/assets/telegram.svg";
 import linkedin from "@/assets/linkedin.svg";
 //import github from "@/assets/github.svg";
 import menu from "@/assets/menu.svg";
+import mail from "@/assets/mail.svg";
 import play from "@/assets/play.svg";
 import dev from "@/assets/dev.svg";
 import layer from "@/assets/layer.svg";
@@ -14,6 +15,9 @@ import camera from "@/assets/camera.svg";
 import video from "@/assets/video.svg";
 import server from "@/assets/server.svg";
 import copy from "@/assets/copy.svg";
+import chield from "@/assets/chield.svg";
+import lightning from "@/assets/lightning.svg";
+import star from "@/assets/star.svg";
 
 import react from "@/assets/icons/react.svg";
 import angular from "@/assets/icons/angular.svg";
@@ -47,8 +51,12 @@ export {
     Tie,
     //github,
     copy,
+    mail,
     facebook,
     instagram,
+    chield,
+    lightning,
+    star,
     telegram,
     linkedin,
     menu,

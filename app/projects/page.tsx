@@ -40,7 +40,7 @@ const Projects = () => {
   const ct2 = useRef(null);
   const ct3 = useRef(null);
   const ct4 = useRef(null);
-  const ct5 = useRef(null);
+  const ct5 = useRef(null);21
   const ct6 = useRef(null);
 
   const sk1 = useRef<HTMLDivElement | null>(null);

@@ -93,3 +93,13 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
     width: 0px;
 }
+
+select, ::picker(select) {
+  appearance: base-select; 
+}
+::picker(select) {
+  background-color: var(--background);
+  border: 2px solid #7070703b;
+  border-radius: 8px;
+  padding: 10px;
+}

@@ -10,6 +10,7 @@ import vscode from '@/assets/vscode.svg'
 import pagination from '@/assets/Pagination.svg'
 import arbty from '@/assets/arbty.svg'
 import arbtg from '@/assets/arbtg.svg'
+import beam from '@/assets/beam.svg'
 import mockup from '@/assets/mockup.png'
 import image1 from '@/assets/Image.png'
 import image2 from '@/assets/Image2.png'
@@ -21,6 +22,7 @@ export {
     image2,
     image3,
     image4,
+    beam,
     pagination,
     arbty,
     mockup,

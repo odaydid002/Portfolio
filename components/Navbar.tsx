@@ -43,7 +43,7 @@ const Navbar = () => {
   // 🔥 Nav links config
   const links = [
     { name: "Home", href: "/" },
-    { name: "Career", href: "/career" },
+    { name: "Career", href: "/" },
     { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/contact" },
   ];

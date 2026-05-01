@@ -44,6 +44,10 @@ import threejs from "@/assets/icons/threejs.svg";
 import docker from "@/assets/icons/docker.svg";
 import android from "@/assets/icons/android.svg";
 import ios from "@/assets/icons/ios.svg";
+import graduate from "@/assets/graduate.svg";
+import terminal from "@/assets/terminal.svg";
+import achive from "@/assets/achive.svg";
+import group from "@/assets/group.svg";
 
 
 
@@ -52,6 +56,10 @@ export {
     //github,
     copy,
     mail,
+    graduate,
+    terminal,
+    achive,
+    group,
     facebook,
     instagram,
     chield,

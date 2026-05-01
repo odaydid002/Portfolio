@@ -16,9 +16,11 @@ import image1 from '@/assets/Image.png'
 import image2 from '@/assets/Image2.png'
 import image3 from '@/assets/Image3.png'
 import image4 from '@/assets/Image4.png'
+import graduateme from '@/assets/graduateme.svg'
 
 export { 
     image1,
+    graduateme,
     image2,
     image3,
     image4,
